@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AI/Промт.md",
+                "file": "C++/Виды связываний (external, internal, no linkage).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Промт"
+              "title": "Виды связываний (external, internal, no linkage)"
             }
           }
         ]
@@ -198,6 +198,8 @@
   },
   "active": "9a487ebbc25fd1ae",
   "lastOpenFiles": [
+    "AI/Промт.md",
+    "C++/Виды связываний (external, internal, no linkage).md",
     "AI/Модели/Что такое скиллы.md",
     "C++/Собеседование/А1/Сборка программы на C++.md",
     "C++/Собеседование/А1/Шаблоны функций.md",
@@ -214,7 +216,6 @@
     "C++/Собеседование/ывв.md",
     "C++/Компиляция/Компиляция.md",
     "C++/Компиляция/И еще раз про динамические библиотеки.md",
-    "AI/Промт.md",
     "C++/Компиляция/Препроцессирование.md",
     "AI/Модели",
     "C++/Компиляция/Include Guards.md",
@@ -233,7 +234,6 @@
     "C++/Компиляция/Создание исполняемого файла.md",
     "C++/Base/Умные указатели.md",
     "C++/Base/unique_ptr.md",
-    "System Design/Lll.md",
     "Без названия.canvas",
     "C++/Собеседование",
     "C++/Компиляция",
