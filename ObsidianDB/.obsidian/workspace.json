@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "C++/Name Mangling.md",
+                "file": "AI/Промт.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Name Mangling"
+              "title": "Промт"
             }
           }
         ]
@@ -198,8 +198,8 @@
   },
   "active": "9a487ebbc25fd1ae",
   "lastOpenFiles": [
-    "C++/Static Initialization Order Fiasco.md",
     "C++/Name Mangling.md",
+    "C++/Static Initialization Order Fiasco.md",
     "C++/Виды связываний (external, internal, no linkage).md",
     "AI/Промт.md",
     "AI/Модели/Что такое скиллы.md",
