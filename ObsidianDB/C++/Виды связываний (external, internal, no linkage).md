@@ -162,6 +162,7 @@ static int iuch = 5;
 
 ```C++
 // bar.cpp
+
 void doWork() {
   int counter = 0; // no linkage
 }
