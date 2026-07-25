@@ -10,21 +10,21 @@
 ├── foo.cpp
 └── main.cpp
 ```
+
 >`bar.cpp`
 ```C++
-// bar.cpp
 int sqr(int x) { return x * x; }
 ```
+
 >`foo.cpp`
 ```C++
-// foo.cpp
 int sqr(int x);
 
 bool check(int a, int b, int c) { return sqr(a) + sqr(b) == sqr(c); }
 ```
+
 >`main.cpp`
 ```C++
-// main.cpp
 #include <iostream>
 
 bool check(int a, int b, int c);
@@ -33,6 +33,11 @@ int main() {
   std::cout << check(1, 2, 3) << std::endl;
   return 0;
 }
+```
+
+Если мы скомпилируем приложение командой:
+```
+g++ -o main main.cpp foo.cpp 
 ```
 
 
