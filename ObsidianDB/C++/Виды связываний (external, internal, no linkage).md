@@ -273,12 +273,11 @@ inline
 Ранее мы говорили о том, что в `C++` существует проблема с классам, перечислениями и typedef - все из-за того, что для линковщика это объекты без связывания, он считает, что в каждой единице трансляции одинаковая реализация объектов имеющих идентичное название
 Но как же нам обойти это правило? Ответ кроется в `namespace {}` - анонимное пространство имён
 Вспомним пример, с которого мы начали наш доклад
-```
+```C++
 
+// bar.cpp
 #include <iostream>
-
 namespace {
-
 struct Foo {
   void foo() { std::cout << "Я люблю оливки" << std::endl; }
 };
@@ -288,7 +287,27 @@ void external_bar() {
   x.foo();
 }
 
+// foo.cpp
+#include <iostream>
+namespace {
+struct Foo {
+  void foo() { std::cout << "Я не люблю оливки" << std::endl; }
+};
+} // namespace
+void external_foo() {
+  auto x = Foo();
+  x.foo();
+}
 
+// main.cpp
+void external_bar();
+void external_foo();
+
+int main() {
+    external_bar();
+    external_foo();
+    return 0;
+}
 ```
 
 
