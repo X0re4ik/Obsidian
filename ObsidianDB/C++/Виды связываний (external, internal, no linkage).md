@@ -128,7 +128,6 @@ static const int* u;
 static int foo() { return 1; }
 ```
 
-
 ```bash
 >> g++ -c bar.cpp -o bar.o
 >> objdump -jC bar.o
