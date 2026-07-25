@@ -348,7 +348,7 @@ void external_bar() {
 Я не люблю оливки
 ```
 
-
+Спецификаторы и их влияние на связывание
 
 
 ```
@@ -378,109 +378,6 @@ inline
 Тип связывания:  **Слабый**
 
 
-Анонимность в `C++`
-
-Ранее мы говорили о том, что в `C++` существует проблема с классам, перечислениями и typedef - все из-за того, что для линковщика это объекты без связывания, он считает, что в каждой единице трансляции одинаковая реализация объектов имеющих идентичное название
-Но как же нам обойти это правило? Ответ кроется в `namespace {}` - анонимное пространство имён
-Вспомним пример, с которого мы начали наш доклад
-```C++
-
-// bar.cpp
-#include <iostream>
-namespace {
-struct Foo {
-  void foo() { std::cout << "Я люблю оливки" << std::endl; }
-};
-} // namespace
-void external_bar() {
-  auto x = Foo();
-  x.foo();
-}
-
-// foo.cpp
-#include <iostream>
-namespace {
-struct Foo {
-  void foo() { std::cout << "Я не люблю оливки" << std::endl; }
-};
-} // namespace
-void external_foo() {
-  auto x = Foo();
-  x.foo();
-}
-
-// main.cpp
-void external_bar();
-void external_foo();
-
-int main() {
-    external_bar();
-    external_foo();
-    return 0;
-}
-```
-
-Давайте посмотрим на примере `bar.cpp` из чего состояла функция до включения её в анонимный `namespace` и после
-
-До:
-```C++
-#include <iostream>
-
-struct Foo {
-  void foo() { std::cout << "Я люблю оливки" << std::endl; }
-};
-void external_bar() {
-  auto x = Foo();
-  x.foo();
-}
-```
-
-```
->> g++ -c bar.cpp -o bar.o
->> objdump -tC bar.o | grep "Foo::foo"
-0000000000000000  w    F .text._ZN3Foo3fooEv    000000000000003e Foo::foo()
-```
-
-После:
-```C++
-#include <iostream>
-
-namespace {
-struct Foo {
-  void foo() { std::cout << "Я люблю оливки" << std::endl; }
-};
-} // namespace
-void external_bar() {
-  auto x = Foo();
-  x.foo();
-}
-```
-
-```
->> g++ -c bar.cpp -o bar.o
->> objdump -tC bar.o | grep "Foo::foo"
-0000000000000000 l     F .text  000000000000003a (anonymous namespace)::Foo::foo()
-```
-
-Мы видим, что по умолчанию `foo` была `external` и имела слабую связанность, но аннонимность позволила превратить `foo` в `internal`, что позволило избежать `ODR`, а так же наша позволило нашей программе наконец-то твердо и чётко заявить о своем отношении к оливкам
-```bash
->> g++ main.cpp bar.cpp foo.cpp -o main
->> ./main
-Я люблю оливки
-Я не люблю оливки
-```
-
-
-Сущность существует только в рамках одного блока
-
-
-
-Чем отличается Static от Анономного пространства имён
-
-static - это спецификатор класса памяти (storage class specifier). 
-
-
-Передача аргументов функции 
 
 
 Материал
