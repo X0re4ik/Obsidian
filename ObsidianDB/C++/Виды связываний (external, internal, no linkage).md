@@ -6,9 +6,30 @@
 Представим, что у нас есть 3 файла:
 
 ```bash
-├── bar.cpp // int sqr(int x) { return x * x; }
+├── bar.cpp
 ├── foo.cpp
 └── main.cpp
+```
+
+```C++
+int sqr(int x) { return x * x; }
+```
+
+```C++
+int sqr(int x);
+
+bool check(int a, int b, int c) { return sqr(a) + sqr(b) == sqr(c); }
+```
+
+```C++
+#include <iostream>
+
+bool check(int a, int b, int c);
+
+int main() {
+  std::cout << check(1, 2, 3) << std::endl;
+  return 0;
+}
 ```
 
 
