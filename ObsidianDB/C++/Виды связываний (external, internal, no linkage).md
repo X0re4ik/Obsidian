@@ -253,7 +253,11 @@ const
 const - спецификатор, который гарнирует неизменяемость объект
 Тип связывания: **internal**
 
-Здесь необходимо понимать, что сама 
+Здесь необходимо понимать, что сам спецификатор всегда даёт внутреннее связывание, так сложилось исторически.
+Но
+```C++
+const int* x; // external l
+```
 
 https://stackoverflow.com/questions/1143262/what-is-the-difference-between-const-int-const-int-const-and-int-const
 
