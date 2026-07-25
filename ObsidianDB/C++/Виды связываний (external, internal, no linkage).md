@@ -188,7 +188,7 @@ void doWork() {
 #include <iostream>
 
 struct Foo {
-  void foo() { std::cout << "Я люблю оливки" << std::endl; }
+  static void foo() { std::cout << "Я люблю оливки" << std::endl; }
 };
 
 void external_bar() { Foo::foo(); }
@@ -199,7 +199,7 @@ void external_bar() { Foo::foo(); }
 #include <iostream>
 
 struct Foo {
-  void foo() { std::cout << "Я не люблю оливки" << std::endl; }
+  static void foo() { std::cout << "Я не люблю оливки" << std::endl; }
 };
 
 void external_foo() { Foo::foo(); }
@@ -236,6 +236,10 @@ int main() {
 Одна и та же программа в зависимости от того, какую последовательность единиц трансляции мы задали работает совершенно по разному - вот вам и слабо связывание.
 
 Вскрыв подкапотную объектного файла `bar.cpp` мы увидим, что 
+`
+```bash
+
+```
 
 
 
