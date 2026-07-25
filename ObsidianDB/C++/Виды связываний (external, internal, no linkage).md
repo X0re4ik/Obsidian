@@ -152,8 +152,15 @@ enum Color {
 
 Слабое связывание
 
+```C++
+struct Foo {
+  static void foo() {}
+};
 
+void external_foo() { Foo::foo(); 
+```
 
+Ранее, мы говорили, что `static` 
 
 
 
