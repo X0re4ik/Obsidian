@@ -8,7 +8,7 @@ foo.cpp:(.text+0x0): повторное определение «foo()»; /tmp/c
 collect2: error: ld returned 1 exit status
 ```
 
-Опытным `C++` эта проблема известна, как [ODR` (`One Definition Rule`)] (https://en.cppreference.com/cpp/language/definition) 
+Опытным `C++` эта проблема известна, как [`ODR` (`One Definition Rule`)](https://en.cppreference.com/cpp/language/definition). Но корень этой ошибки ле
 
 
 Наша программа для компилятора одна большая книга, в ней есть главы, страницы, ссылки на другие главы и, конечно же, картинки.
