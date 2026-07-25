@@ -37,7 +37,7 @@ int main() {
 
 Если мы скомпилируем приложение командой:
 ```
-g++ -o main main.cpp foo.cpp bar.cpp
+>> g++ -o main main.cpp foo.cpp bar.cpp
 ```
 то программа успешно скомпилируется и выполниться, все потому что по умолчанию переменные в `C++` имеют  `external` связывание.
 
@@ -45,11 +45,12 @@ g++ -o main main.cpp foo.cpp bar.cpp
 Взглянем на таблицу символов `bar.cpp`:
 
 ```
-g++ -c bar.cpp -o bar.o
+>> g++ -c bar.cpp -o bar.o
 ```
 
 ```
-objdump -t bar.o
+>> objdump -t bar.o
+
 
 bar.o:     формат файла elf64-x86-64
 
@@ -60,8 +61,7 @@ SYMBOL TABLE:
 
 ```
 
-```
-```
+Обратим внимание на значения из второй колонки -  `g` (`global`) и `l` (`loc`)
 
 У каждой переменной и функции есть правило видимости:
 
