@@ -346,7 +346,13 @@ void external_bar() {
 }
 ```
 
+```
+>> g++ -c bar.cpp -o bar.o
+>> objdump -tC bar.o | grep "Foo::foo"
+0000000000000000 l     F .text  000000000000003a (anonymous namespace)::Foo::foo()
+```
 
+Мы видим, что по умолчанию `foo` была `external` и им
 
 Сущность существует только в рамках одного блока
 
