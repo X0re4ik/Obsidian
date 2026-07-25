@@ -313,7 +313,7 @@ int main() {
 Давайте посмотрим на примере `bar.cpp` из чего состояла функция до включения её в анонимный `namespace` и после
 
 До:
-```
+```C++
 #include <iostream>
 
 struct Foo {
@@ -326,8 +326,23 @@ void external_bar() {
 ```
 
 После:
+```C++
+#include <iostream>
 
+namespace {
+struct Foo {
+  void foo() { std::cout << "Я люблю оливки" << std::endl; }
+};
+} // namespace
+void external_bar() {
+  auto x = Foo();
+  x.foo();
+}
+```
 
+```
+>> g++ -c bar.cpp -o bar.o  
+```
 
 Сущность существует только в рамках одного блока
 
