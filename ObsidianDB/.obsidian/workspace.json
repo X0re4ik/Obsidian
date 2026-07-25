@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AI/Промт.md",
+                "file": "C++/Виды связываний (external, internal, no linkage).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Промт"
+              "title": "Виды связываний (external, internal, no linkage)"
             }
           }
         ]
@@ -198,8 +198,9 @@
   },
   "active": "9a487ebbc25fd1ae",
   "lastOpenFiles": [
-    "C++/Виды связываний (external, internal, no linkage).md",
     "C++/Static Initialization Order Fiasco.md",
+    "AI/Промт.md",
+    "C++/Виды связываний (external, internal, no linkage).md",
     "C++/Собеседование/А1/Сборка программы на C++.md",
     "C++/Собеседование/А1/Ссылки.md",
     "C++/Собеседование/А1/Указатели.md",
@@ -208,7 +209,6 @@
     "C++/Собеседование/А1/Ключевые слова.md",
     "C++/Собеседование/А1/Технологии.md",
     "C++/Name Mangling.md",
-    "AI/Промт.md",
     "AI/Модели/Что такое скиллы.md",
     "C++/Собеседование/А1/А1. Краткий ответ по вопросам ДЗ№1.md",
     "2026-06-29.md",
