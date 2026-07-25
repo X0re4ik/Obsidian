@@ -259,7 +259,43 @@ void f() { sum(1, 3); }
 
 Вспомним пример из главы "Сила в его слабости", а что если и правда 2 разработчика напишут идентичные классы с идентичными методами, отдебажить подобную ошибку будет невероятно трудно, хотя и реально (в том может помочь карта ссылок, которую можно получить флагом `-Map=map.txt`, например, `g++ main.cpp bar.cpp foo.cpp -Wl,-Map=map.txt -o main`)
 
-В случаи с классами ситуация усугубляется тем, что `static` классов не бывает, а сам `static` для изменения связанности - антипатерн, поможет нам в этом 
+В случаи с классами ситуация усугубляется тем, что `static` классов не бывает, а сам `static` для изменения связанности - антипатерн, поможет нам в этом аннонимные пространтсва имён
+
+```C++
+// bar.cpp
+#include <iostream>
+namespace {
+struct Foo {
+  void foo() { std::cout << "Я люблю оливки" << std::endl; }
+};
+} // namespace
+void external_bar() {
+  auto x = Foo();
+  x.foo();
+}
+
+// foo.cpp
+#include <iostream>
+namespace {
+struct Foo {
+  void foo() { std::cout << "Я не люблю оливки" << std::endl; }
+};
+} // namespace
+void external_foo() {
+  auto x = Foo();
+  x.foo();
+}
+
+// main.cpp
+void external_bar();
+void external_foo();
+
+int main() {
+    external_bar();
+    external_foo();
+    return 0;
+}
+```
 
 
 
