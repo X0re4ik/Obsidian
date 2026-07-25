@@ -19,6 +19,8 @@
 
 
 
-Чем отличается Static от 
+Чем отличается Static от Анономного пространства имён
 
-static - это спецификатор класса памяти (storage class specifier)
+static - это спецификатор класса памяти (storage class specifier). 
+
+
