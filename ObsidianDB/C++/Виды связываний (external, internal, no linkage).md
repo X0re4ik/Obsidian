@@ -85,6 +85,7 @@ SYMBOL TABLE:
 
 ```C++
 // bar.hpp
+
 int x;
 int *y;
 thread_local int z; // Поговорим о нем чуть позже
