@@ -32,13 +32,14 @@ int sqr(int x) { return x * x; }
 ```
 
 ```C++
+// foo.cpp
 int sqr(int x);
 
 bool check(int a, int b, int c) { return sqr(a) + sqr(b) == sqr(c); }
 ```
 
->`main.cpp`
 ```C++
+// main.cpp
 #include <iostream>
 
 bool check(int a, int b, int c);
@@ -49,11 +50,11 @@ int main() {
 }
 ```
 
-Если мы скомпилируем приложение командой:
+Попробуем скомпилировать нашу программу:
 ```bash
 >> g++ -o main main.cpp foo.cpp bar.cpp
 ```
-то программа успешно скомпилируется и выполниться, все потому что по умолчанию переменные в `C++` имеют  `external` связывание.
+Программа успешно компилируется и работает, а ве
 
 
 Взглянем на таблицу символов `bar.cpp`:
