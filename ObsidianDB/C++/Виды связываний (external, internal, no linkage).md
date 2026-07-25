@@ -75,7 +75,7 @@ SYMBOL TABLE:
 
 ## Какие модификаторы доступа существуют
 
-Стандарт определяет всего [3 модификатора доступа](https://en.cppreference.com/cpp/language/language_linkage):
+Стандарт определяет всего [3 модификатора cd](https://en.cppreference.com/cpp/language/language_linkage):
 * Внешнее связывание (`external linkage`)
 * Внутреннее связывание (`internal linkage`)
 * Без связывания (`no linkage`)
