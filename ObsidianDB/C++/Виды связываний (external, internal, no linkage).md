@@ -175,14 +175,16 @@ void doWork() {
 
 Ранее мы говорили, что таблица символов, может возвращать тип связывания `weak`, который тоже внешний, но почему-то именуется слабым. У слабого связывания есть неоспоримое преимущество: линковщик выберет только 1 реализацию и именно ей будут пользоваться все остальные - и недостаток: если по какой либо причине реализации различаются - `UB`
 
-Рассмотрим
-```C++
+Рассмотрим на примере
+
+```bash
 ├── bar.cpp
 ├── foo.cpp
 └── main.cpp
 ```
 
 ```C++
+// bar.cpp
 #include <iostream>
 
 struct Foo {
@@ -193,6 +195,7 @@ void external_bar() { Foo::foo(); }
 ```
 
 ```C++
+// foo.cpp
 #include <iostream>
 
 struct Foo {
@@ -203,13 +206,14 @@ void external_foo() { Foo::foo(); }
 ```
 
 ```C++
+// main.cpp
 void external_bar();
 void external_foo();
 
 int main() {
     external_bar();
     external_foo();
-    return 1;
+    return 0;
 }
 ```
 
