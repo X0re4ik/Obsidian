@@ -10,18 +10,21 @@
 ├── foo.cpp
 └── main.cpp
 ```
-
+>`bar.cpp`
 ```C++
+// bar.cpp
 int sqr(int x) { return x * x; }
 ```
-
+>`foo.cpp`
 ```C++
+// foo.cpp
 int sqr(int x);
 
 bool check(int a, int b, int c) { return sqr(a) + sqr(b) == sqr(c); }
 ```
-
+>`main.cpp`
 ```C++
+// main.cpp
 #include <iostream>
 
 bool check(int a, int b, int c);
@@ -31,6 +34,9 @@ int main() {
   return 0;
 }
 ```
+
+
+
 
 
 У каждой переменной и функции есть правило видимости:
