@@ -264,6 +264,8 @@ const int* x; // external linkage
 
 Тип связывания: **internal**
 
+inline 
+Тип связывания:  **Слабый**
 
 
 
