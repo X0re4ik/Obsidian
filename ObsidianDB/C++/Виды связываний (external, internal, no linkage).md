@@ -260,8 +260,9 @@ const int* x; // external linkage
 ```
 Здесь надо понимать, что `x` - это *изменяемый глобальный* указатель на *неизменяемое число* (Очень рекомендую [ответ ultraman на StackOwerflow](https://stackoverflow.com/questions/1143262/what-is-the-difference-between-const-int-const-int-const-and-int-const)) 
 
-`static` - 
+`static` - в мире `C++` перегружен значениями (https://github.com/Nekrolm/ubbook/blob/master/runtime/static_inline.md), но нам он интересен, как модификатор видимости
 
+Тип связывания: **internal**
 
 
 
