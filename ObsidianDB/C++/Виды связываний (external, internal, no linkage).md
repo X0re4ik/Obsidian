@@ -24,3 +24,4 @@
 static - это спецификатор класса памяти (storage class specifier). 
 
 
+Передача 
