@@ -75,7 +75,7 @@ SYMBOL TABLE:
 
 ## Какие модификаторы доступа существуют
 
-Стандарт определяет всего [3 модификатора cd](https://en.cppreference.com/cpp/language/language_linkage):
+Стандарт определяет всего [3 вида связываний](https://ru.cppreference.com/cpp/language/storage_duration#Linkage)):
 * Внешнее связывание (`external linkage`)
 * Внутреннее связывание (`internal linkage`)
 * Без связывания (`no linkage`)
@@ -109,6 +109,8 @@ int foo() { return 1; }
 0000000000000010 g     O .bss   0000000000000008 u
 0000000000000000 g     F .text  000000000000000f foo()
 ```
+
+Особенную роль занимают классы, enum-ы и typedef - формально, они имеют 
 
 2) Внутреннее связывание
 
