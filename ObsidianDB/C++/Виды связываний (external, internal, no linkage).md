@@ -65,6 +65,7 @@ SYMBOL TABLE:
 
 А что функции, с функциями все понятно, рассмотрим более зачудительный пример
 
+
 ```C++
 const double thickness = 0.65;
 const char* name = "tooth";
