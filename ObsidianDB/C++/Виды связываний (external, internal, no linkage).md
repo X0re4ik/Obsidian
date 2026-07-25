@@ -255,9 +255,10 @@ template <typename T> T sum(T x, T y) { return x + y; }
 void f() { sum(1, 3); }
 ```
 
+```bash
+0000000000000000  w    F .text._Z3sumIiET_S0_S0_        0000000000000018 int sum<int>(int, int)
 ```
-0000000000000000  w    F .text._Z3sumIiET_S0_S0_        0000000000000018 int sum<int>(int, int
-```
+
 
 
 ```
