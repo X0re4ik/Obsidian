@@ -245,7 +245,7 @@ int main() {
 constexpr
 ```
 
-
+constexpr ()
 
 
 
