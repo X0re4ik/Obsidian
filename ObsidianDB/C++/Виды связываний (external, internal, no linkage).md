@@ -256,8 +256,9 @@ const - спецификатор, который гарнирует неизме
 Здесь необходимо понимать, что сам спецификатор всегда даёт внутреннее связывание, так сложилось исторически.
 Но
 ```C++
-const int* x; // external l
+const int* x; // external linkage
 ```
+Здесь надо понимать, что `x` - это *изменяемый глобальный* указатель на неизменяемое число 
 
 https://stackoverflow.com/questions/1143262/what-is-the-difference-between-const-int-const-int-const-and-int-const
 
