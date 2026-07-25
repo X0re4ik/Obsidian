@@ -325,6 +325,12 @@ void external_bar() {
 }
 ```
 
+```
+>> g++ -c bar.cpp -o bar.o
+>> objdump -tC bar.o | grep "Foo::foo"
+0000000000000000  w    F .text._ZN3Foo3fooEv    000000000000003e Foo::foo()
+```
+
 После:
 ```C++
 #include <iostream>
@@ -340,9 +346,7 @@ void external_bar() {
 }
 ```
 
-```
->> g++ -c bar.cpp -o bar.o  
-```
+
 
 Сущность существует только в рамках одного блока
 
