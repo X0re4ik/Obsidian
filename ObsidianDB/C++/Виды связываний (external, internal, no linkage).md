@@ -275,6 +275,20 @@ inline
 Вспомним пример, с которого мы начали наш доклад
 ```
 
+#include <iostream>
+
+namespace {
+
+struct Foo {
+  void foo() { std::cout << "Я люблю оливки" << std::endl; }
+};
+} // namespace
+void external_bar() {
+  auto x = Foo();
+  x.foo();
+}
+
+
 ```
 
 
