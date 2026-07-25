@@ -182,27 +182,36 @@ g       external_foo()
 └── main.cpp
 ```
 
-```
+```C++
 #include <iostream>
 
-  
-
 struct Foo {
-
-static void foo() { std::cout << "Я люблю оливки" << std::endl; }
-
+  static void foo() { std::cout << "Я люблю оливки" << std::endl; }
 };
-
-  
 
 void external_bar() { Foo::foo(); }
 ```
 
+```C++
+#include <iostream>
+
+struct Foo {
+  static void foo() { std::cout << "Я не люблю оливки" << std::endl; }
+};
+
+void external_foo() { Foo::foo(); }
 ```
 
+```C++
+void external_bar();
+void external_foo();
+
+int main() {
+    external_bar();
+    external_foo();
+    return 1;
+}
 ```
-
-
 
 
 
