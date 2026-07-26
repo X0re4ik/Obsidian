@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AI/Промт.md",
+                "file": "C++/Pitchfork Layout/cxx-pflR1The Pitchfork Layout (PFL).md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Промт"
+              "title": "cxx-pflR1The Pitchfork Layout (PFL)"
             }
           }
         ]
@@ -196,13 +196,14 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "88283cefa598f31f",
+  "active": "9a487ebbc25fd1ae",
   "lastOpenFiles": [
+    "AI/Промт.md",
+    "C++/Pitchfork Layout/cxx-pflR1The Pitchfork Layout (PFL).md",
     "C++/Pitchfork Layout",
     "Без названия.md",
     "C++/Виды связываний (external, internal, no linkage) для самых маленьких.md",
     "C++/Static Initialization Order Fiasco.md",
-    "AI/Промт.md",
     "AI/Модели/Что такое скиллы.md",
     "C++/Собеседование/А1/Сборка программы на C++.md",
     "C++/Собеседование/А1/Ссылки.md",
@@ -240,7 +241,6 @@
     "System Design",
     "AI",
     "C++/Base/Без названия",
-    "Recording 20260627133023.m4a",
-    "Без названия.base"
+    "Recording 20260627133023.m4a"
   ]
 }
