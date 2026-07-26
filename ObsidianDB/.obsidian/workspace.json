@@ -196,8 +196,9 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "9a487ebbc25fd1ae",
+  "active": "88283cefa598f31f",
   "lastOpenFiles": [
+    "C++/Pitchfork Layout",
     "Без названия.md",
     "C++/Виды связываний (external, internal, no linkage) для самых маленьких.md",
     "C++/Static Initialization Order Fiasco.md",
@@ -233,7 +234,6 @@
     "C++/Без имени.png",
     "C++/Утечка памяти/Виды утечек памяти.md",
     "C++/Утечка памяти",
-    "C++/Компиляция/Translation unit.md",
     "Без названия.canvas",
     "C++/Собеседование",
     "C++/Компиляция",
