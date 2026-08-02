@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Без названия/Two Pointers/15. 3Sum.md",
+                "file": "C++/Собеседование/A2/Конструктор копирования.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "15. 3Sum"
+              "title": "Конструктор копирования"
             }
           }
         ]
@@ -200,8 +200,8 @@
   },
   "active": "9a487ebbc25fd1ae",
   "lastOpenFiles": [
-    "Без названия/Two Pointers/2130. Maximum Twin Sum of a Linked List.md",
     "Без названия/Two Pointers/15. 3Sum.md",
+    "Без названия/Two Pointers/2130. Maximum Twin Sum of a Linked List.md",
     "Без названия/Two Pointers/234. Palindrome Linked List ().md",
     "Без названия/Two Pointers.md",
     "Без названия/Two Pointers/Без названия.md",
