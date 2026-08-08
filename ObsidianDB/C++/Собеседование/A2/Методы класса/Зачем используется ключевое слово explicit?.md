@@ -128,3 +128,5 @@ int main(int, char **) {
 
 
 https://stackoverflow.com/questions/60646412/what-is-the-usecase-for-explicit-bool
+
+SFINAE
