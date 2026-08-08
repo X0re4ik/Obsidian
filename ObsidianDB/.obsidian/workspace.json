@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AI/Промт.md",
+                "file": "C++/Собеседование/A2/Методы класса.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Промт"
+              "title": "Методы класса"
             }
           }
         ]
@@ -200,13 +200,13 @@
   },
   "active": "9a487ebbc25fd1ae",
   "lastOpenFiles": [
+    "AI/Промт.md",
     "C++/Собеседование/A2/Методы класса.md",
     "C++/Собеседование/A2/Без названия.md",
     "C++/Собеседование/А1/Шаблоны функций.md",
     "C++/Собеседование/A2/Конструктор копирования.md",
     "C++/Собеседование/A2/Идиома Copy-and-Swap.md",
     "C++/Собеседование/А1/А1. Краткий ответ по вопросам ДЗ№1.md",
-    "AI/Промт.md",
     "Без названия/Two Pointers/15. 3Sum.md",
     "Без названия/Two Pointers/2130. Maximum Twin Sum of a Linked List.md",
     "Без названия/Two Pointers/234. Palindrome Linked List ().md",
