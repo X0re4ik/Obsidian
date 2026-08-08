@@ -127,4 +127,21 @@ int main(int, char **) {
 
 ## Что именно ломает explicit?
 
-Ключевая идея `explicit` - запрещать `Copy initialization` (копирующую инициализацию), заставляя 
+Ключевая идея `explicit` - запрещать копирующую инициализацию (`copy initialization`), заставляя использовать прямую (`direct initialization`)
+
+**Например:**
+```C++
+class SimpleExplicit {
+public:
+  explicit SimpleExplicit() {}
+  SimpleExplicit(const SimpleExplicit &&c) = default;
+  explicit operator bool() const { return true; }
+};
+
+int main(int, char **) {
+  SimpleExplicit se7{};
+  SimpleExplicit se8 = se7;
+
+  return 0;
+}
+```
