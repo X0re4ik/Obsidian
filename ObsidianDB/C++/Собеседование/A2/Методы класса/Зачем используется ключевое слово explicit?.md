@@ -103,4 +103,24 @@ int main(int, char **) {
 
 ## Contextual conversion
 
-Не смотря на то, что `C++11` требует явного преобразования для `explicit` операторов преобразования в стандарте есть исключение, а 
+Не смотря на то, что `C++11` требует явного преобразования для `explicit` операторов преобразования в стандарте есть исключение, а именно преобразование в логических контекстах ():
+
+```C++
+class SimpleExplicit {
+public:
+  explicit SimpleExplicit() {}
+  explicit operator bool() const { return true; }
+};
+
+int main(int, char **) {
+  SimpleExplicit se7{};
+
+  if (se7) {
+    std::cout << "se7 is true" << std::endl;
+  }
+
+  return 0;
+}
+```
+
+Pltc
