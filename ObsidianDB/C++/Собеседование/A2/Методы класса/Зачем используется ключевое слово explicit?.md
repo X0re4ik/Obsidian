@@ -2,7 +2,7 @@
 ## До C++11
 
 История `explicit` началась еще со времён `С++98`, тогда  `explicit`применялся только для конструктора из одного аргумента. Начиная с `C++11`, его применение расширилось до конструкторов с несколькими аргументами и для операторов приведения типа.
-Для чего нужен был `explicit` - борьба с неявным преобразованием типа.
+Для чего нужен был `explicit` - борьба с неявным преобразованием типа. `explicit` запрещает выполнять копирующую инициализаци
 
 Рассмотрим классы `Simple` и `SimpleExplicit` в контексте `C++98`:
 ```C++
@@ -125,23 +125,4 @@ int main(int, char **) {
 ```
 
 
-## Что именно ломает explicit?
-
-Ключевая идея `explicit` - запрещать копирующую инициализацию (`copy initialization`), заставляя использовать прямую (`direct initialization`)
-
-**Например:**
-```C++
-class SimpleExplicit {
-public:
-  explicit SimpleExplicit() {}
-  SimpleExplicit(const SimpleExplicit &&c) = default;
-  explicit operator bool() const { return true; }
-};
-
-int main(int, char **) {
-  SimpleExplicit se7{};
-  SimpleExplicit se8 = se7;
-
-  return 0;
-}
-```
+`C++20` 
