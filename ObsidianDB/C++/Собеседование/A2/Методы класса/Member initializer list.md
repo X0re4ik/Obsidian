@@ -53,9 +53,23 @@ public:
 };
 ```
 При компиляции такого кода компилятор выдаст предупреждение `-Wreorder`, а вывод программы всё равно будет:
-`X`
-`Y`
+```bash
+>> g++ main.cpp -o main -Wall
+main.cpp: In constructor ‘Point::Point(X, Y)’:
+main.cpp:18:5: warning: ‘Point::y_’ will be initialized after [-Wreorder]
+   18 |   Y y_;
+      |     ^~
+main.cpp:17:5: warning:   ‘X Point::x_’ [-Wreorder]
+   17 |   X x_;
+      |     ^~
+main.cpp:19:3: warning:   when initialized here [-Wreorder]
+   19 |   Point(X x, Y y) : y_{y}, x_{x} {}
+      |   ^~~~~
 
+>> ./main
+X
+Y
+```
 ## Почему `const` и ссылки обязательно инициализировать в списке?
 Так как внутри тела конструктора выполняется операция *присваивания*, а не инициализации, это накладывает строгие ограничения:
 
