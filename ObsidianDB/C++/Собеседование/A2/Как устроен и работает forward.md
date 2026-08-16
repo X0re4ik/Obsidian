@@ -8,4 +8,6 @@ forward(typename std::remove_reference<_Tp>::type &__t) noexcept {
 }
 ```
 
-По сравнению с реализацией `std::move` ([[Как устроен и работает move]]) мы видим несколько значимых отличий. 
+По сравнению с реализацией `std::move` ([[Как устроен и работает move]]) мы видим несколько значимых отличий.
+1) Возвращаемый тип стал `&&`, пропал `remove_reference_t` из `return`
+2) `remove_reference_t`
