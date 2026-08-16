@@ -43,3 +43,4 @@ template <typename T> void wrapper(T &&arg) {
 }
 ```
 
+process ВСЕГДА будет `lvalue`
