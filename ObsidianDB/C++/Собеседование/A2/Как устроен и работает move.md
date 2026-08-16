@@ -8,15 +8,6 @@
 
 ```cpp
 template <typename T>
-constexpr std::remove_reference_t<T>&& move(T&& t) noexcept {
-    return static_cast<std::remove_reference_t<T>&&>(t);
-}
-```
-
-В старой форме записи с `typename` она эквивалентна следующему коду:
-
-```cpp
-template <typename T>
 constexpr typename std::remove_reference<T>::type&& move(T&& t) noexcept {
     return static_cast<typename std::remove_reference<T>::type&&>(t);
 }

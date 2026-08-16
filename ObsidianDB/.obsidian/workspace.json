@@ -35,8 +35,7 @@
               "title": "Как устроен и работает move"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -213,10 +212,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "c9be51a637bb7322",
+  "active": "9a487ebbc25fd1ae",
   "lastOpenFiles": [
-    "C++/Собеседование/A2/Как устроен и работает forward.md",
     "C++/Собеседование/A2/Как устроен и работает move.md",
+    "C++/Собеседование/A2/Как устроен и работает forward.md",
     "C++/Собеседование/A2/Методы класса.md",
     "C++/Собеседование/A2/Семантика перемещения.md",
     "Pasted image 20260816094404.png",
