@@ -1,4 +1,4 @@
-Посмот
+Посмотрим на реализацию `std::forward`
 
 ```C++
 template <typename _Tp>
