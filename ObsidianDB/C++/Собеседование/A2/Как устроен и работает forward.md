@@ -19,5 +19,11 @@ std::forward(x); // std::forward(int&) -> std::forward(int&)
 std::forward(10); // std::forward(int&&) -> std::forward(int&)
 ```
 
-Теперь рассмотрим рассмотрим, что возаращает `std::forward` с учётом правила свертывания ссылок ([[Как устроен и работает move#Правила свёртывания ссылок]]])
+Теперь рассмотрим, что возаращает `std::forward` с учётом правила свертывания ссылок ([[Как устроен и работает move#Правила свёртывания ссылок]]])
 
+```C++
+int x = 10;
+std::forward(x);
+// static_cast<int& &&>(x) -> static_cast<int&>(x)
+std::forward(10); // std::forward(int&&) -> std::forward(int&)
+```
