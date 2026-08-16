@@ -35,5 +35,11 @@ std::forward(10);
 Но, вся мощь раскрывается в тот, момент, когда мы встрчаем нечто подобное
 
 ```C++
+void process(int &x) { std::cout << "lvalue\n"; }
+void process(int &&x) { std::cout << "rvalue\n"; }
 
+template <typename T> void wrapper(T &&arg) {
+	process(arg);
+}
 ```
+
