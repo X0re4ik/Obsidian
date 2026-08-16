@@ -13,9 +13,10 @@ forward(typename std::remove_reference<_Tp>::type &__t) noexcept {
 2) `remove_reference` переместился в тип входного параметра
 
 Ранее мы говорили, что `remove_reference` избавляет нас от ссылки в типе шаблона, тогда `std::forward` всегда будет получать на вход ссылку на объект.
-
 ```C++
 int x = 10;
 std::forward(x); // std::forward(int&) -> std::forward(int&)
 std::forward(10); // std::forward(int&&) -> std::forward(int&)
 ```
+
+Теперь по 
