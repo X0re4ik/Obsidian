@@ -41,7 +41,25 @@ void process(int &&x) { std::cout << "rvalue\n"; }
 template <typename T> void wrapper(T &&arg) {
 	process(arg);
 }
+
+//
+int a = 5;
+wrapper(a); // lvalue
+wrapper(10); // lvalue
 ```
 
 `process` ВСЕГДА будет `lvalue`, проблема в том, что `arg` - именнованный объект, который имеет категорию выражения - `rvalue`. Нам нужен такой механизм, который бы учитывал категорию выражения `arg` и выбирал нужную перегрузку исходя из этого - именно таким механизмом выступает `std::forward`
 
+```C++
+void process(int &x) { std::cout << "lvalue\n"; }
+void process(int &&x) { std::cout << "rvalue\n"; }
+
+template <typename T> void wrapper(T &&arg) {
+	process(arg);
+}
+
+//
+int a = 5;
+wrapper(a); // lvalue
+wrapper(10); // rvalue
+```
