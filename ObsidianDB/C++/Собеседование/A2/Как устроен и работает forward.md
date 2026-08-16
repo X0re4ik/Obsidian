@@ -25,5 +25,10 @@ std::forward(10); // std::forward(int&&) -> std::forward(int&)
 int x = 10;
 std::forward(x);
 // static_cast<int& &&>(x) -> static_cast<int&>(x)
-std::forward(10); // std::forward(int&&) -> std::forward(int&)
+std::forward(10);
+// static_cast<int&& &&>(x) -> static_cast<int&&>(x)
 ```
+
+Вывод: АБСОЛЮТНО НЕНУЖНАЯ ВЕЩЬ. ИЗГАТЬ ЕЕ ИЗ СТАНДАРТА!!!
+
+Действительно, в повседневной 
