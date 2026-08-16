@@ -43,4 +43,4 @@ template <typename T> void wrapper(T &&arg) {
 }
 ```
 
-process ВСЕГДА будет `lvalue`
+process ВСЕГДА будет `lvalue`, проблема в том, что `arg` - именнованный объект, который имеет категорию выражения - `rvalue`. На
