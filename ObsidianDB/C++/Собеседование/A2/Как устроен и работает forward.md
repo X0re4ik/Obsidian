@@ -41,17 +41,6 @@ void process(int &&x) { std::cout << "rvalue\n"; }
 template <typename T> void wrapper(T &&arg) {
 	process(arg);
 }
-
-// 
-int a = 10;
-wrapper(a);
-// wrapper(int& &&) -> wrapper(int&)
-// process(int&)
-// lvalue
-
-wrapper(10);
-// wrapper(int&& &&) -> wrapper(int&&)
-// 
 ```
 
 process ВСЕГДА будет `lvalue`
