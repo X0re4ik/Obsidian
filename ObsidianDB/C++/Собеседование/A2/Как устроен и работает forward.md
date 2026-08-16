@@ -12,3 +12,4 @@ forward(typename std::remove_reference<_Tp>::type &__t) noexcept {
 1) Возвращаемый тип стал `&&`, пропал `remove_reference` из `return`
 2) `remove_reference` переместился в тип входного параметра
 
+Ранее мы говорили, что `remove_reference` избавляет нас от ссылки в
