@@ -1,201 +1,150 @@
 # Как устроен и работает `std::move`
 
-`std::move` часто воспринимают как операцию, которая «перемещает объект». На самом деле это не так: сама по себе она **ничего не перемещает**. `std::move` лишь приводит выражение к категории значения `xvalue`, то есть сообщает компилятору, что объект можно рассматривать как источник ресурсов для перемещения.
-
-Собственно перемещение происходит позднее — когда результат `std::move` передаётся в конструктор перемещения, оператор перемещающего присваивания или другую перегрузку, принимающую rvalue-ссылку.
-
-Типичная реализация выглядит так:
+Рассмотрим, как реализован `std::move`:
 
 ```cpp
-template <typename T>
-constexpr typename std::remove_reference<T>::type&& move(T&& t) noexcept {
-    return static_cast<typename std::remove_reference<T>::type&&>(t);
+template <typename _Tp>
+constexpr typename std::remove_reference<_Tp>::type&& move(_Tp&& __t) noexcept {
+    return static_cast<typename std::remove_reference<_Tp>::type&&>(__t);
 }
 ```
 
-## Почему параметр имеет тип `T&&`
+Первое, что бросается в глаза, — наличие `std::remove_reference`. Второе: по факту `std::move` ничего не перемещает, а только выполняет приведение объекта к `&&`.
 
-В шаблоне функции параметр вида `T&&`, где `T` выводится из аргумента, называется *forwarding reference* (ранее часто использовали термин *universal reference*).
-
-Благодаря этому `std::move` может принять и lvalue, и rvalue:
-
-```cpp
-int x = 10;
-std::move(x);   // аргумент — lvalue
-std::move(10);  // аргумент — rvalue
-```
-
-Однако тип `T` будет выведен по-разному:
-
-| Переданный аргумент      | Выведенный `T` | Тип параметра после свёртывания ссылок |
-| ------------------------ | -------------: | -------------------------------------: |
-| `x` (lvalue типа `int`)  |         `int&` |                     `int& &&` → `int&` |
-| `10` (rvalue типа `int`) |          `int` |                                `int&&` |
-
-Это важно для понимания того, зачем нужен `std::remove_reference`.
-
-## Почему наивная реализация не работает
-
-Рассмотрим упрощённую реализацию:
+Попробуем реализовать свой `my::move()`, который, как кажется, должен заниматься перемещением объекта. Поскольку принцип работы `std::remove_reference` пока неизвестен, реализуем версию без него:
 
 ```cpp
 namespace my {
 
-template <typename T>
-constexpr T&& move(T&& t) noexcept {
-    return static_cast<T&&>(t);
+template <typename _Tp>
+constexpr _Tp&& move(_Tp&& __t) noexcept {
+    return static_cast<_Tp&&>(__t);
 }
 
 } // namespace my
 ```
 
-Проверим её:
+Проверим работу нашего `my::move` на простом примере:
 
 ```cpp
-std::string big_data_1(1'000, '1');
-std::string big_data_2;
+std::string bigData1(1'000, '1');
+std::string bigData2;
 
-big_data_2 = my::move(big_data_1);
+bigData2 = my::move(bigData1);
 
-std::cout << big_data_1.size() << " - " << big_data_2.size() << '\n';
+std::cout << bigData1.size() << " - " << bigData2.size() << std::endl;
+// Возможный вывод: 1'000 - 1'000
 ```
 
-При передаче `big_data_1` параметр является lvalue. Поэтому шаблонный аргумент выводится как `T = std::string&`.
+Как видно, ожидаемого перемещения не произошло: был вызван обычный копирующий оператор присваивания. Почему так?
 
-Подставим это в сигнатуру:
+Дело в механизме свёртывания ссылок (*reference collapsing*) в шаблонах.
 
-```cpp
-T&&  // std::string& &&
+Этот механизм можно интуитивно объяснить по аналогии с логическим оператором `AND`:
+
+```text
+&  — 0
+&& — 1
+
+&  &&  -> &
 ```
 
-После свёртывания ссылок получается:
+То есть если в результате подстановки типов где-либо появляется `&`, итоговым типом будет `&`.
+
+Например:
 
 ```cpp
-std::string&
+int x = 10;
+my::move(x);
 ```
 
-Следовательно, выражение
+При передаче `x` шаблонный параметр выводится как `int&`:
 
 ```cpp
-static_cast<T&&>(t)
+x                         // lvalue типа int
+_Tp = int&
+
+my::move(_Tp&& __t)       // my::move(int& && __t)
+                           // после свёртывания: my::move(int& __t)
 ```
 
-превращается в приведение к `std::string&`, то есть остаётся lvalue. Поэтому выбирается копирующий оператор присваивания, а не перемещающий:
+Далее возвращаемое выражение также остаётся lvalue-ссылкой:
 
 ```cpp
-big_data_2 = /* lvalue */;
+static_cast<_Tp&&>(__t)   // static_cast<int& &&>(__t)
+                           // static_cast<int&>(__t)
 ```
 
-## Правила свёртывания ссылок
+То есть объект как был lvalue, так им и остался. Поэтому при присваивании выбирается копирование, а не перемещение.
 
-В C++ нельзя создать «ссылку на ссылку» как самостоятельный тип, но такие комбинации возникают при подстановке шаблонных параметров. Затем применяется *reference collapsing*:
-
-```cpp
-T&  &   -> T&
-T&  &&  -> T&
-T&& &   -> T&
-T&& &&  -> T&&
-```
-
-Удобная мнемоника: если среди ссылок есть lvalue-ссылка (`&`), результатом будет `&`. Только комбинация `&& &&` даёт `&&`.
-
-## Роль `std::remove_reference`
-
-Упрощённо `std::remove_reference` можно представить так:
+Кажется, что вся магия находится в `std::remove_reference<_Tp>::type`. Взглянем на этот тривиальный class template:
 
 ```cpp
-template <typename T>
+template <typename _Tp>
 struct remove_reference {
-    using type = T;
+    typedef _Tp type;
 };
 
-template <typename T>
-struct remove_reference<T&> {
-    using type = T;
+template <typename _Tp>
+struct remove_reference<_Tp&> {
+    typedef _Tp type;
 };
 
-template <typename T>
-struct remove_reference<T&&> {
-    using type = T;
+template <typename _Tp>
+struct remove_reference<_Tp&&> {
+    typedef _Tp type;
 };
 ```
 
-Этот type trait удаляет ссылочную квалификацию:
+Обратите внимание: этот класс имеет три версии, и всё, что он делает, — удаляет ссылочную квалификацию. Условно можно сказать:
 
 ```cpp
-std::remove_reference_t<int>    // int
-std::remove_reference_t<int&>   // int
-std::remove_reference_t<int&&>  // int
+std::remove_reference<int>::type    // int
+std::remove_reference<int&>::type   // int
+std::remove_reference<int&&>::type  // int
 ```
 
-Поэтому при вызове:
+Такое удаление ссылки даёт возможность независимо от исходного типа ссылки приводить выражение к rvalue-ссылке, то есть к `xvalue`.
+
+Например:
 
 ```cpp
 int x = 10;
 std::move(x);
 ```
 
-выводится `T = int&`, но затем `std::remove_reference_t<T>` становится `int`. Возвращаемый тип — `int&&`, а выражение `x` приводится к `int&&`:
+Здесь `_Tp` выводится как `int&`, но `std::remove_reference<_Tp>::type` становится `int`:
 
 ```cpp
+std::move(x)
+
+_Tp = int&
+std::remove_reference<_Tp>::type = int
+
 static_cast<int&&>(x)
 ```
 
-Именно удаление ссылки до добавления `&&` предотвращает свёртывание `int& && -> int&` и гарантирует, что `std::move` возвращает rvalue-ссылку на базовый тип.
-
-## Категории значений
-
-Корректнее говорить не «`std::move` возвращает объект», а «`std::move` возвращает ссылку, а выражение вызова имеет категорию `xvalue`».
+Поэтому `std::move` может принимать как lvalue, так и rvalue, но выражение вызова `std::move(...)` всегда имеет категорию значения `xvalue`.
 
 ```cpp
 int x = 10;
 
-std::move(x);    // lvalue -> xvalue
-std::move(10);   // prvalue -> xvalue
+std::move(x);     // lvalue  -> xvalue
+std::move(10);    // prvalue -> xvalue
 std::move(x + 1); // prvalue -> xvalue
 ```
 
-Здесь есть небольшая терминологическая поправка: `10` и `x + 1` — это `prvalue`, а не просто «rvalue». `xvalue` и `prvalue` являются подкатегориями `rvalue`.
+Небольшая терминологическая поправка: `10` и `x + 1` — это `prvalue`, а `xvalue` и `prvalue` являются разновидностями `rvalue`.
 
-## Где происходит реальное перемещение
-
-Например:
+Важно: `std::move` не выполняет перемещение самостоятельно. Он только делает возможным выбор перегрузки для перемещения:
 
 ```cpp
-std::string source(1'000, '1');
-std::string destination;
+std::string bigData1(1'000, '1');
+std::string bigData2;
 
-destination = std::move(source);
+bigData2 = std::move(bigData1); // выбирается operator=(std::string&&)
 ```
 
-`std::move(source)` создаёт `xvalue`, поэтому перегрузка `std::string::operator=(std::string&&)` становится подходящей и обычно выбирается вместо копирующего присваивания. Уже этот оператор выполняет фактическую передачу ресурсов.
+Именно `std::string::operator=(std::string&&)`, а не `std::move`, передаёт ресурсы из `bigData1` в `bigData2`.
 
-После перемещения объект `source` остаётся валидным, но его состояние не определено более точно: для стандартной библиотеки обычно говорят, что оно *valid but unspecified*. Такой объект можно уничтожить, присвоить ему новое значение или вызвать операции, допустимые для объекта в неизвестном состоянии; не следует опираться на его прежнее содержимое или размер.
-
-Например, нельзя использовать размер исходной строки как проверку того, произошло ли перемещение:
-
-```cpp
-std::string source(1'000, '1');
-std::string destination = std::move(source);
-
-// source.size() может быть 0, а может иметь другое допустимое значение.
-```
-
-## Практический вывод
-
-`std::move` — это не команда «перемести объект», а явное преобразование выражения в `xvalue`. Оно позволяет вызвать перегрузки, предназначенные для перемещения.
-
-Эквивалентная учебная реализация:
-
-```cpp
-namespace my {
-
-template <typename T>
-constexpr std::remove_reference_t<T>&& move(T&& t) noexcept {
-    return static_cast<std::remove_reference_t<T>&&>(t);
-}
-
-} // namespace my
-```
-
-Использовать `std::move` стоит только тогда, когда вы действительно готовы отдать объект как источник ресурсов и далее не рассчитываете на его прежнее значение.
+После перемещения `bigData1` остаётся валидным объектом, но его значение не следует считать прежним или предсказуемым. Поэтому его размер нельзя использовать как строгую проверку того, произошло ли перемещение.
