@@ -19,4 +19,4 @@ std::forward(x); // std::forward(int&) -> std::forward(int&)
 std::forward(10); // std::forward(int&&) -> std::forward(int&)
 ```
 
-Теперь по 
+Теперь рассмотрим рассмотрим, что возаращает `std::forward` с учётом правила свертывания ссылок ([[Как устроен и работает move#Правила свёртывания ссылок]]])
