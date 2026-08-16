@@ -50,6 +50,7 @@ wrapper(a);
 // lvalue
 
 wrapper(10);
+// wrapper(int&& &&) -> wrapper(int&&)
 // 
 ```
 
