@@ -16,7 +16,6 @@ forward(typename std::remove_reference<_Tp>::type &__t) noexcept {
 
 ```C++
 int x = 10;
-int std::forward;
+std::forward(x); // std::forward(int&) -> std::forward(int&)
 std::forward(10); // std::forward(int&&) -> std::forward(int&)
-
 ```
