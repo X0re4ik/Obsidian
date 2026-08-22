@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "C++/Собеседование/A2/Исключения.md",
+                "file": "C++/Собеседование/A2/dynamic_cast.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Исключения"
+              "title": "dynamic_cast"
             }
           }
         ]
@@ -200,8 +200,9 @@
   },
   "active": "c9be51a637bb7322",
   "lastOpenFiles": [
-    "AI/Промт.md",
     "C++/Собеседование/A2/Исключения.md",
+    "C++/Собеседование/A2/dynamic_cast.md",
+    "AI/Промт.md",
     "Английский язык/17.08.2026.md",
     "Английский язык/15.08.2026.md",
     "C++/Собеседование/A2/Семантика перемещения.md",
@@ -233,7 +234,6 @@
     "Pasted image 20260802195443.png",
     "Без названия/Two Pointers",
     "Без названия",
-    "C++/Компиляция/dsd.md",
     "C++/Собеседование/A2",
     "C++/Pitchfork Layout",
     "C++/Собеседование/А1",
