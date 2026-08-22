@@ -176,9 +176,19 @@
               "icon": "spreadsheet",
               "title": "Advanced Tables"
             }
+          },
+          {
+            "id": "a1337e5b28ece8ca",
+            "type": "leaf",
+            "state": {
+              "type": "mermaid-toolbar-view",
+              "state": {},
+              "icon": "trident-custom",
+              "title": "Mermaid Toolbar"
+            }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
@@ -195,10 +205,11 @@
       "bases:Создать новую базу": false,
       "audio-recorder:Начать/остановить запись": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "obsidian-git:Open Git source control": false
+      "obsidian-git:Open Git source control": false,
+      "mermaid-tools:Open Mermaid Toolbar": false
     }
   },
-  "active": "c9be51a637bb7322",
+  "active": "a1337e5b28ece8ca",
   "lastOpenFiles": [
     "C++/Собеседование/A2/Как устроен и работает forward.md",
     "C++/Без названия.md",
