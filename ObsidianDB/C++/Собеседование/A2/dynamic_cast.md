@@ -1,2 +1,3 @@
 
-dymanic_cast в оличии от 
+dymanic_cast в оличии от static_cast выполняется во время rutime работы программы
+dymamic_cast может применятся только к полиморфнм типам класса
