@@ -98,4 +98,3 @@ uid=1000(xoore4ik) gid=1000(xoore4ik) группы=1000(xoore4ik),4(adm),24(cdro
 >> id root
 uid=0(root) gid=0(root) группы=0(root)
 ```
-Так же с
