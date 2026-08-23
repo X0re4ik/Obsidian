@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AI/Промт.md",
+                "file": "Linux/ДЗ. Вопросы по Linux.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Промт"
+              "title": "ДЗ. Вопросы по Linux"
             }
           }
         ]
@@ -211,9 +211,9 @@
   },
   "active": "c9be51a637bb7322",
   "lastOpenFiles": [
+    "AI/Промт.md",
     "Linux/ДЗ. Вопросы по Linux.md",
     "Linux/Общие основы Linux.md",
-    "AI/Промт.md",
     "C++/Компиляция/Статическая библиотека.md",
     "C++/Компиляция/Создание исполняемого файла.md",
     "C++/Компиляция/Include Guards.md",
