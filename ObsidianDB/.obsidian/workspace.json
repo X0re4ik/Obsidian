@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Общие основы Linux.md",
+                "file": "Linux/Общие основы Linux.md",
                 "mode": "source",
                 "source": false
               },
@@ -211,9 +211,9 @@
   },
   "active": "c9be51a637bb7322",
   "lastOpenFiles": [
-    "AI/Промт.md",
-    "Общие основы Linux.md",
     "Linux/ДЗ. Вопросы по Linux.md",
+    "Linux/Общие основы Linux.md",
+    "AI/Промт.md",
     "C++/Компиляция/Статическая библиотека.md",
     "C++/Компиляция/Создание исполняемого файла.md",
     "C++/Компиляция/Include Guards.md",
