@@ -92,3 +92,10 @@ uid=1000(xoore4ik) gid=1000(xoore4ik) группы=1000(xoore4ik),4(adm),24(cdro
 >> pwd
 /home/xoore4ik
 ```
+
+Отметим, что команда id может ыдать информацию по любому пользователю:
+```bash
+>> id root
+uid=0(root) gid=0(root) группы=0(root)
+```
+Так же с
