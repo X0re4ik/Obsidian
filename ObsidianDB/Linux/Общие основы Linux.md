@@ -82,13 +82,13 @@ echo "Привет из второго терминала!" > /dev/pts/4
 ##  Как узнать текущего пользователя, его UID, группы и текущую директорию?
 
 Команда `id` даст всю информацию о текущем пользователе
-```
+```bash
 >> id
 xoore4ik@xoore4ik-911XWildHunterG2D:~$ id
 uid=1000(xoore4ik) gid=1000(xoore4ik) группы=1000(xoore4ik),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),122(lpadmin),135(lxd),136(sambashare),999(docker)
 ```
 Команда `pwd` даст всю информаию про текущую директорию
-```
+```bash
 >> pwd
-
+/home/xoore4ik
 ```
