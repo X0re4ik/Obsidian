@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AI/Промт.md",
+                "file": "C++/Собеседование/A2/Идиомы.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Промт"
+              "title": "Идиомы"
             }
           }
         ]
@@ -211,8 +211,8 @@
   },
   "active": "c9be51a637bb7322",
   "lastOpenFiles": [
-    "Linux/ДЗ. Вопросы по Linux.md",
     "AI/Промт.md",
+    "Linux/ДЗ. Вопросы по Linux.md",
     "Linux/Общие основы Linux.md",
     "C++/Компиляция/Статическая библиотека.md",
     "C++/Компиляция/Создание исполняемого файла.md",
