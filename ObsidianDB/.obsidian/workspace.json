@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "C++/Собеседование/A2/Идиомы.md",
+                "file": "Linux/ДЗ. Вопросы по Linux.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Идиомы"
+              "title": "ДЗ. Вопросы по Linux"
             }
           }
         ]
@@ -211,6 +211,7 @@
   },
   "active": "c9be51a637bb7322",
   "lastOpenFiles": [
+    "C++/Собеседование/A2/Идиомы.md",
     "AI/Промт.md",
     "Linux/ДЗ. Вопросы по Linux.md",
     "Linux/Общие основы Linux.md",
@@ -238,7 +239,6 @@
     "erewrewrrewewrrew.md",
     "Как.md",
     "Без названия.canvas",
-    "C++/Собеседование/A2/Идиомы.md",
     "C++/Собеседование/A2/Исключения.md",
     "C++/Собеседование/A2/Как устроен и работает forward.md",
     "C++/Собеседование/A2/Как устроен и работает move.md",
