@@ -16,9 +16,10 @@ public:
 };
 
 auto op = SumOperation();
-op.
+auto res = op.calculate(1, 4);
 // OR
-
-x = 
-
+res = 1 + 4;
 ```
+
+## Что такое принцип DRY (Don't Repeat Yourself)? Какие проблемы возникают при дублировании кода?
+
