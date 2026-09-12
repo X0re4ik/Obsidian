@@ -67,7 +67,6 @@ double totalInvoice = calculateTotalPrice(invoicePrice);
 
 - KISS требует: сделай проще, не плоди абстракции
 - DRY требует: убери дублирование, вынеси в одно место
-
 ```C++
 // KISS
 void sendToAudit(Producer* producer, std::string topic, std::string message) {
@@ -79,9 +78,7 @@ void sendToServiceX(Producer* producer, std::string topic, std::string message) 
 	producer->send_and_wait(topic, message);
 }
 ```
-
 В примере выше есть дублирование, но он понятный один метод отправляет данные в аудит, второй в сервис `X`. `DRY` же требует что-то вроде этого:
-
 ```C++
 
 struct KafkaDataSend {
@@ -94,8 +91,9 @@ struct KafkaDataSend {
 void sendToKafka(KafkaDataSend& kafkaData) {
 	auto msg = kafkaData.message;
 	if (kafkaData.isAudit) {
-		msg = kafkaData.
+		msg = "[AUDIT] " + msg;
 	}
 	kafkaData.producer->send_and_wait(kafkaData.topic, kafkaData.message);
 }
 ```
+
