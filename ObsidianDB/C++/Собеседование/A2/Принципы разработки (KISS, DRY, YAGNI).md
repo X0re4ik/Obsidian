@@ -80,4 +80,18 @@ void sendToServiceX(Producer* producer, std::string topic, std::string message) 
 }
 ```
 
-В примере выше есть дублирование, но он понятный один метод отправляет данные в аудит, второй в сервис `X`. вкн
+В примере выше есть дублирование, но он понятный один метод отправляет данные в аудит, второй в сервис `X`. `DRY` же требует что-то вроде этого:
+
+```C++
+
+struct DataSend {
+	Producer* producer;
+	std::string topic;
+	std::string message;
+	bool isAudit;
+}
+
+void sendToKafka(Producer* producer, std::string topic, std::string message) {
+	producer->send_and_wait(topic, message);
+}
+```
