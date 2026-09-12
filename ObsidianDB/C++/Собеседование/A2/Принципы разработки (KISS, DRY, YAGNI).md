@@ -71,6 +71,7 @@ double totalInvoice = calculateTotalPrice(invoicePrice);
 ```C++
 // KISS
 void sendToAudit(Producer* producer, std::string topic, std::string message) {
+	auto msg = "[AUDIT] " + message;
 	producer->send_and_wait(topic, message);
 }
 
@@ -78,3 +79,5 @@ void sendToServiceX(Producer* producer, std::string topic, std::string message) 
 	producer->send_and_wait(topic, message);
 }
 ```
+
+В примере выше есть дублирование, но он понятный один метод отправляет данные в аудит, второй в сервис `X`. вкн
