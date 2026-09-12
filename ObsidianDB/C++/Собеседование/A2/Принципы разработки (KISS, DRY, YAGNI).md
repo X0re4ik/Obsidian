@@ -8,6 +8,17 @@ public:
 	virtual int calculate(int x, int y) = 0; 
 };
 
-class Sum 
+class SumOperation : public BinaryOperation {
+public:
+	virtual int calculate(int x, int y) override {
+		return x + y;
+	}
+};
+
+auto op = SumOperation();
+op.
+// OR
+
+x = 
 
 ```
