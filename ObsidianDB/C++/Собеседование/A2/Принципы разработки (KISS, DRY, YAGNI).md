@@ -70,5 +70,11 @@ double totalInvoice = calculateTotalPrice(invoicePrice);
 
 ```C++
 // KISS
-void sendToAudit(Producer* producer, )
+void sendToAudit(Producer* producer, std::string topic, std::string message) {
+	producer->send_and_wait(topic, message);
+}
+
+void sendToServiceX(Producer* producer, std::string topic, std::string message) {
+	producer->send_and_wait(topic, message);
+}
 ```
