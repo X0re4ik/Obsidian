@@ -84,14 +84,18 @@ void sendToServiceX(Producer* producer, std::string topic, std::string message) 
 
 ```C++
 
-struct DataSend {
+struct KafkaDataSend {
 	Producer* producer;
 	std::string topic;
 	std::string message;
 	bool isAudit;
 }
 
-void sendToKafka(Producer* producer, std::string topic, std::string message) {
-	producer->send_and_wait(topic, message);
+void sendToKafka(KafkaDataSend& kafkaData) {
+	auto msg = kafkaData.message;
+	if (kafkaData.isAudit) {
+		msg = kafkaData.
+	}
+	kafkaData.producer->send_and_wait(kafkaData.topic, kafkaData.message);
 }
 ```
