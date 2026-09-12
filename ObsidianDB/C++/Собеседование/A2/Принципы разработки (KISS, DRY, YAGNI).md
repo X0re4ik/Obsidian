@@ -23,3 +23,20 @@ res = 1 + 4;
 
 ## Что такое принцип DRY (Don't Repeat Yourself)? Какие проблемы возникают при дублировании кода?
 
+```
+// Обработка обычного заказа
+double totalOrder = orderPrice + (orderPrice * 0.20);
+if (orderPrice > 1000) {
+    totalOrder -= 50;
+}
+
+// Обработка счета для юридических лиц в другом файле
+double totalInvoice = invoicePrice + (invoicePrice * 0.20);
+if (invoicePrice > 1000) {
+    totalInvoice -= 50;
+}
+
+// OR
+
+
+```
