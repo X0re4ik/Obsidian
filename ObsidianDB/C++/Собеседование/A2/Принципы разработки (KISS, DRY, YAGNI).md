@@ -67,3 +67,8 @@ double totalInvoice = calculateTotalPrice(invoicePrice);
 
 - KISS требует: сделай проще, не плоди абстракции
 - DRY требует: убери дублирование, вынеси в одно место
+
+```C++
+// KISS
+void sendToAudit(Producer* producer, )
+```
