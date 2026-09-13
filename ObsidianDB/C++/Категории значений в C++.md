@@ -10,4 +10,4 @@
 					lvalue   xvalue prvalue xvalue
 ```
 
-**lvalue**
+Полный список `lvalue` значений перечислен [здесь](https://ru.cppreference.com/cpp/language/value_category), перечислим лишь наиболее 
