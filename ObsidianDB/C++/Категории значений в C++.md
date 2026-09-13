@@ -59,4 +59,5 @@ User make_user() {
 ```
 * Выражение приведения к не ссылочному типу: `static_cast<double>(x)`, `std::string{}`, `(int)42`
 * Указатель `this`
-Свойства :
+Свойства `prvalue`:
+* 
