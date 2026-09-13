@@ -34,3 +34,4 @@ int main() {
     std::cout << &(make_user().name); // Compiler Error
 }
 ```
+* Изменяемое `lvalue` может использоваться, как левый операнд для 
