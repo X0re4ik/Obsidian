@@ -10,4 +10,6 @@
 					lvalue   xvalue prvalue xvalue
 ```
 
-Полный список `lvalue` значений перечислен [здесь](https://ru.cppreference.com/cpp/language/value_category), перечислим лишь наиболее 
+Полный список `lvalue` значений перечислен [здесь](https://ru.cppreference.com/cpp/language/value_category), перечислим лишь наиболее типичные:
+* Любое именованнное выражение. Если объект имеет название значит он `lvalue`, в т.ч. 
+* 
