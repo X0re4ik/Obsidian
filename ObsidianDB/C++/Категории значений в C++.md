@@ -57,4 +57,6 @@ User make_user() {
   return {"Anton"};
 }
 ```
-* 
+* Выражение приведения к не ссылочному типу: `static_cast<double>(x)`, `std::string{}`, `(int)42`
+* Указатель `this`
+Свойства :
