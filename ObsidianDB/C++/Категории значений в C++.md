@@ -18,3 +18,19 @@
 * Строковые литералы `Hello Wolrd`
 Свойства `lvalue`:
 * Адресс `lvalue` можно получить встроенным оператором `&`
+Напри
+```C++
+User &make_user_ref() {
+  User u{"Anton"};
+  return u;
+}
+
+User make_user() {
+  return {"Anton"};
+}
+
+int main() {
+    std::cout << &(make_user_ref().name); // OK
+    std::cout << &(make_user().name); // Compiler Error
+}
+```
