@@ -1,10 +1,11 @@
 
-Иерархия категорий значений в `C++`
+Каждое значение в `C++` 
+```text
+							 expression
+							 /         \
+						glvalue       rvalue
+						/    \        /    \
+					lvalue   xvalue prvalue xvalue
+```
 
-```
-                 expression
-                 /         \
-            glvalue       rvalue
-            /    \        /    \
-       lvalue   xvalue  prvalue xvalue
-```
+Ка
