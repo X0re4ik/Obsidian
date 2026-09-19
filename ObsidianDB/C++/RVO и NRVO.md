@@ -300,5 +300,5 @@ int main() {
   make(&t);
 }
 ```
-2) 2 раза: `make` -> `return object` -> `ref`
+2) 1 раза: `make` -> `return object` - далее `ref` привязывается к уже существуещему 
 3) 3 раза: уничтожение локального объекта в `make`, после `return object`, а затем `ref`
