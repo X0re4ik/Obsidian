@@ -5,9 +5,14 @@ https://www.learncpp.com/cpp-tutorial/introduction-to-containers-and-arrays/
 
 ## Основы работы `std::vector`
 
+
 ## Устройство в памяти: `size`, `capacity`, contiguous storage
 
+
 ## Создание векторов и доступ к элементам
+
+
+
 
 ## Добавление, вставка и удаление элементов
 
