@@ -300,5 +300,33 @@ int main() {
   make(&t);
 }
 ```
-2) 1 раза: `make` -> `return object` - далее `ref` привязывается к уже существуещему 
-3) 3 раза: уничтожение локального объекта в `make`, после `return object`, а затем `ref`
+2) 1 раза: `make` -> `return object` - далее `ref` привязывается к уже существуещему `return object`
+3) 2 раза: уничтожение локального объекта в `make`, после `return object`, а `ref` лишь ссылается на объект `return object`
+
+
+```C++
+struct T {
+    T();
+    T(const T&);
+    T(T&&);
+    ~T();
+};
+
+T make(bool flag) {
+    T t;
+
+    if (flag) {
+        return t;
+    }
+
+    return std::move(t);
+}
+
+int main() {
+    T x = make(true);
+    T y = make(false);
+}
+```
+
+Вопросы:
+1) 
