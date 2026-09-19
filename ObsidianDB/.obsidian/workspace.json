@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "C++/RVO и NRVO.md",
+                "file": "AI/Промт.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "RVO и NRVO"
+              "title": "Промт"
             }
           }
         ]
@@ -211,8 +211,8 @@
   },
   "active": "c9be51a637bb7322",
   "lastOpenFiles": [
-    "C++/Категории значений в C++.md",
     "C++/RVO и NRVO.md",
+    "C++/Категории значений в C++.md",
     "C++/Собеседование/A2/А2. Краткий ответ по вопросам ДЗ№2.md",
     "C++/Собеседование/A2/Без названия.md",
     "C++/Собеседование/A2/Виртуализация и контейнеризация.md",
