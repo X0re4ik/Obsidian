@@ -7,5 +7,7 @@ https://www.learncpp.com/cpp-tutorial/introduction-to-containers-and-arrays/
 
 ## Основы работы `std::vector`
 
+
 ## Основные операции и компаненты `std::vector`
 
+## 
