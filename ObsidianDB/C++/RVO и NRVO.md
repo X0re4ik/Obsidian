@@ -46,5 +46,3 @@ Class getClass4(int x) { // RVO: ✅ (Неявно создание объект
   return x;
 }
 ```
-
-Создание объекта `rvalue` можно и 
