@@ -19,22 +19,32 @@ RVO стал обязательным, начиная с `C++17`. Рассмот
 
 **Пример:**
 ```C++
-Class getClass1() { // RVO: ✅
+struct Class {
+  Class(int);
+};
+
+Class getClass1() { // RVO: ✅ (Возврат только prvalue)
   return Class{1};
 }
 
-Class getClass2(int x) { // RVO: ✅
+Class getClass2(int x) { // RVO: ✅ (Возврат только prvalue)
   if (x == 0) {
     return Class{0};
   }
   return Class{-1};
 }
 
-Class getClass3(int x) { // RVO: ❌
+Class getClass3(int x) { // RVO: ❌ (prvalue смешан с lvalue)
   if (x == 0) {
     auto tmp = Class{0};
     return tmp;
   }
   return Class{-1};
 }
+
+Class getClass4(int x) { // RVO: ✅ (Неявно создание объекта)
+  return x;
+}
 ```
+
+Создание объекта `rvalue` можно и 
