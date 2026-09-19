@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "C++/Собеседование/A3/ector.md",
+                "file": "C++/Собеседование/A3/vector.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ector"
+              "title": "vector"
             }
           }
         ]
@@ -212,7 +212,7 @@
   "active": "c9be51a637bb7322",
   "lastOpenFiles": [
     "C++/RVO и NRVO.md",
-    "C++/Собеседование/A3/ector.md",
+    "C++/Собеседование/A3/vector.md",
     "C++/Категории значений в C++.md",
     "C++/Виды связываний (external, internal, no linkage) для самых маленьких.md",
     "C++/users/Создание проекта.md",
