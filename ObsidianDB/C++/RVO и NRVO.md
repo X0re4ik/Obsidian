@@ -303,6 +303,7 @@ int main() {
 2) 1 раза: `make` -> `return object` - далее `ref` привязывается к уже существуещему `return object`
 3) 2 раза: уничтожение локального объекта в `make`, после `return object`, а `ref` лишь ссылается на объект `return object`
 
+### Задание №6
 
 ```C++
 struct T {
