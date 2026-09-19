@@ -13,3 +13,17 @@ https://www.learncpp.com/cpp-tutorial/introduction-to-containers-and-arrays/
 
 ## Рост вектора и реаллокация
 
+## `reserve`, `resize` и `shrink_to_fit`
+
+## Итераторы, ссылки и invalidation
+
+## Алгоритмы STL и удаление по условию
+
+## `push_back` vs `emplace_back`, copy и move
+
+## Производительность и сложность операций
+
+## Особые случаи: `vector<bool>`, `unique_ptr`, полиморфизм
+
+## Выбор контейнера, API и практика
+
