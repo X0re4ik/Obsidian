@@ -177,6 +177,39 @@ void push_back(value_type&& __x)
 emplace_back(_Args&&... __args);
 ```
 
+Вырезка реализации:
+
+```
+vector<_Tp, _Alloc>::
+
+emplace_back(_Args&&... __args)
+
+{
+
+if (this->_M_impl._M_finish != this->_M_impl._M_end_of_storage)
+
+{
+
+_GLIBCXX_ASAN_ANNOTATE_GROW(1);
+
+_Alloc_traits::construct(this->_M_impl, this->_M_impl._M_finish,
+
+std::forward<_Args>(__args)...);
+
+++this->_M_impl._M_finish;
+
+_GLIBCXX_ASAN_ANNOTATE_GREW(1);
+
+}
+
+else
+
+_M_realloc_insert(end(), std::forward<_Args>(__args)...);
+
+#if __cplusplus > 201402L
+
+return back();
+```
 
 
 
