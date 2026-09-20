@@ -7,6 +7,18 @@
 
 
 std::vector хранит данные в одном непрерывном участке памяти. Память выделяется через **аллокатор**.
+Вектор содержит обязательный набор полей, упрощенно их можно представить так (Сгенерировано через Perplexity):
+
+```С++
+template <typename T, typename Allocator = std::allocator<T>>
+class VectorLike {
+private:
+    T* begin_;           // начало выделенного буфера
+    T* end_;             // позиция после последнего созданного элемента
+    T* end_of_storage_;  // позиция после конца выделенного буфера
+    [[no_unique_address]] Allocator alloc_;
+};
+```
 
 ## Устройство в памяти: `size`, `capacity`, contiguous storage
 
