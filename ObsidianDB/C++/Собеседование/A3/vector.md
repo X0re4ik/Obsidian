@@ -169,7 +169,15 @@ void push_back(value_type&& __x)
 }
 ```
 
-`emplace_back` - 
+`emplace_back` - добавление элемента в конец
+**Сложность:** `O(1)`
+**Перегрузки:**
+
+```C++
+emplace_back(_Args&&... __args);
+```
+
+
 
 
 ## Рост вектора и реаллокация
