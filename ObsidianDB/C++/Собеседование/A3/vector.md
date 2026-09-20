@@ -149,7 +149,7 @@ source.at(10); // throw std::out_of_range
 
 ## Добавление, вставка и удаление элементов
 
-Добавление:
+**Добавление:**
 
 * `push_back` - добавить элемент в конец
 **Сложность:** `O(1)`
@@ -194,8 +194,13 @@ vector < _Tp, _Alloc > ::
       _M_realloc_insert(end(), std::forward < _Args > (__args)...);
     #if __cplusplus > 201402 L
     return back();
+    
+// `construct` создаёт объект `T` по указанному адресу
 ```
 
+**Вставка:**
+
+* 
 
 
 
