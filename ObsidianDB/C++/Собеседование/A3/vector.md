@@ -212,24 +212,32 @@ vector < _Tp, _Alloc > ::
 **Перегрузки:**
 
 ```C++
-
+// Копирование существующего объекта
 iterator insert(const_iterator __position, const value_type& __x);
+// Пример
 std::vector<int> v{10, 30};
 v.insert(v.begin() + 1, 20); // {10, 20, 30}
 
+// Перемещение существующего объекта
 iterator insert(const_iterator __position, value_type&& __x);
+// Пример
 std::vector<std::string> v{"A", "C"};
 v.insert(v.begin() + 1, std::string{"B"}); // {"A", "B", "C"}
 
+// Вставка из `initializer_list`
 iterator insert(const_iterator __position, initializer_list<value_type> __l);
+// Пример
 std::vector<int> v{10, 40};
 v.insert(v.begin() + 1, {20, 30}); // {10, 20, 30, 40}
 
+// Вставка диапазона итераторов
 iterator insert(const_iterator __position, _InputIterator __first, _InputIterator __last);
-std::vector<int> v{10, 40}, extra{20, 30}; v.insert(v.begin() + 1, extra.begin(), extra.end()); // {10, 20, 30, 40}
+// Пример
+std::vector<int> v{10, 40}, extra{20, 30};
+v.insert(v.begin() + 1, extra.begin(), extra.end()); // {10, 20, 30, 40}
 ```
 
-
+Для диа
 
 ## Рост вектора и реаллокация
 
