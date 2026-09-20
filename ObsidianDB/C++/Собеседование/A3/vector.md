@@ -6,6 +6,7 @@
 ## Основы работы `std::vector`
 
 
+
 ## Устройство в памяти: `size`, `capacity`, contiguous storage
 
 
