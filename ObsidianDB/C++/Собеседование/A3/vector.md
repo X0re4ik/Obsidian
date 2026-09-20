@@ -283,19 +283,22 @@ void pop_back() _GLIBCXX_NOEXCEPT {
 // Удаление элмента на позиции
 iterator erase(const_iterator __position)
 { return _M_erase(begin() + (__position - cbegin())); }
+// Пример
+std::vector<int> values{10, 20, 30, 40};
+values.erase(values.begin() + 1); // values == {10, 30, 40}
 
 // _M_erase
 template < typename _Tp, typename _Alloc >
   _GLIBCXX20_CONSTEXPR
 typename vector < _Tp, _Alloc > ::iterator
 vector < _Tp, _Alloc > ::
-  _M_erase(iterator __first, iterator __last) {
-    if (__first != __last) {
-      if (__last != end())
-        _GLIBCXX_MOVE3(__last, end(), __first);
-      _M_erase_at_end(__first.base() + (end() - __last));
-    }
-    return __first;
+  _M_erase(iterator __position) {
+    if (__position + 1 != end())
+      _GLIBCXX_MOVE3(__position + 1, end(), __position);
+    --this -> _M_impl._M_finish;
+    _Alloc_traits::destroy(this -> _M_impl, this -> _M_impl._M_finish);
+    _GLIBCXX_ASAN_ANNOTATE_SHRINK(1);
+    return __position;
   }
 ```
 
