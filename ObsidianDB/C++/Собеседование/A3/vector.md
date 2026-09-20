@@ -128,7 +128,12 @@ std::vector<int> source{10, 20, 30, 40, 50};
 source[1]
 source[10] // UB
 ```
-1) Метод `.at()`
+2) Метод `.at()`
+```C++
+std::vector<int> source{10, 20, 30, 40, 50};
+source.at(1);
+source.at(10); //
+```
 
 ## Добавление, вставка и удаление элементов
 
