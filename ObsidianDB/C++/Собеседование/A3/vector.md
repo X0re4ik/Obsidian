@@ -294,13 +294,17 @@ typename vector < _Tp, _Alloc > ::iterator
 vector < _Tp, _Alloc > ::
   _M_erase(iterator __position) {
     if (__position + 1 != end())
-	  // Сдвиг всех элментов справа на одну позицию влево
-      _GLIBCXX_MOVE3(__position + 1, end(), __position);
-    --this -> _M_impl._M_finish;
-    _Alloc_traits::destroy(this -> _M_impl, this -> _M_impl._M_finish);
-    _GLIBCXX_ASAN_ANNOTATE_SHRINK(1);
+		// Сдвиг всех элментов справа на одну позицию влево
+	    _GLIBCXX_MOVE3(__position + 1, end(), __position);
+	    --this -> _M_impl._M_finish;
+	    _Alloc_traits::destroy(this -> _M_impl, this -> _M_impl._M_finish);
+	    _GLIBCXX_ASAN_ANNOTATE_SHRINK(1);
     return __position;
   }
+```
+
+```C++
+
 ```
 
 ## Рост вектора и реаллокация
