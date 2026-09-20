@@ -212,10 +212,21 @@ vector < _Tp, _Alloc > ::
 **Перегрузки:**
 
 ```C++
+
 iterator insert(const_iterator __position, const value_type& __x);
+std::vector<int> v{10, 30};
+v.insert(v.begin() + 1, 20); // {10, 20, 30}
+
 iterator insert(const_iterator __position, value_type&& __x);
+std::vector<std::string> v{"A", "C"};
+v.insert(v.begin() + 1, std::string{"B"}); // {"A", "B", "C"}
+
 iterator insert(const_iterator __position, initializer_list<value_type> __l);
+std::vector<int> v{10, 40};
+v.insert(v.begin() + 1, {20, 30}); // {10, 20, 30, 40}
+
 iterator insert(const_iterator __position, _InputIterator __first, _InputIterator __last);
+std::vector<int> v{10, 40}, extra{20, 30}; v.insert(v.begin() + 1, extra.begin(), extra.end()); // {10, 20, 30, 40}
 ```
 
 
