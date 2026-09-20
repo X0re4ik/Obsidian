@@ -150,9 +150,14 @@ source.at(10); // throw std::out_of_range
 ## Добавление, вставка и удаление элементов
 
 Добавление:
+
 * `push_back` - добавить элемент в конец
-Ckj;
+**Сложность:** `O(1)`
+**Перегрузки:**
+
 ```C++
+push_back(const value_type& __x)
+push_back(value_type&& __x)
 
 ```
 
