@@ -304,7 +304,11 @@ vector < _Tp, _Alloc > ::
 ```
 
 ```C++
-
+iterator erase(const_iterator __first, const_iterator __last) {
+  const auto __beg = begin();
+  const auto __cbeg = cbegin();
+  return _M_erase(__beg + (__first - __cbeg), __beg + (__last - __cbeg));
+}
 ```
 
 ## Рост вектора и реаллокация
