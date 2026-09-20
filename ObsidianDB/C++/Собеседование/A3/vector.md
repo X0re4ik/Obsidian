@@ -238,7 +238,8 @@ v.insert(v.begin() + 1, extra.begin(), extra.end()); // {10, 20, 30, 40}
 
 ### Удаление элементов
 
-* clear
+* clear - полная очистка массива от объектов
+
 **Сложность:** `O(N)`, так как необходимо у каждого объекта вызвать деструктор
 **Перегрузки:**
 
@@ -259,9 +260,21 @@ void _M_erase_at_end(pointer __pos) _GLIBCXX_NOEXCEPT {
 }
 ```
 
-* pop_back
-Сложность: `O(1)`
-Перегрузки:
+* pop_back - удаление объекта с конца
+
+**Сложность:** `O(1)` 
+**Перегрузки:**
+
+```C++
+void pop_back() _GLIBCXX_NOEXCEPT {
+  __glibcxx_requires_nonempty();
+  --this -> _M_impl._M_finish;
+  _Alloc_traits::destroy(this -> _M_impl, this -> _M_impl._M_finish);
+  _GLIBCXX_ASAN_ANNOTATE_SHRINK(1);
+}
+```
+
+
 ## Рост вектора и реаллокация
 
 ## `reserve`, `resize` и `shrink_to_fit`
