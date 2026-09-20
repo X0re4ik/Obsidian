@@ -243,23 +243,25 @@ v.insert(v.begin() + 1, extra.begin(), extra.end()); // {10, 20, 30, 40}
 **Перегрузки:**
 
 ```C++
-void
-clear() _GLIBCXX_NOEXCEPT
+void clear() _GLIBCXX_NOEXCEPT
 { _M_erase_at_end(this->_M_impl._M_start); }
 
-//
-void
-_M_erase_at_end(pointer __pos) _GLIBCXX_NOEXCEPT {
+// _M_erase_at_end
+void _M_erase_at_end(pointer __pos) _GLIBCXX_NOEXCEPT {
   if (size_type __n = this -> _M_impl._M_finish - __pos) {
-	// ❗ КОНСТРИРОВАНИЕ ОБЪЕКТА ❗
+	// ❗ Деструктор для каждого объекта ❗
     std::_Destroy(__pos, this -> _M_impl._M_finish,
       _M_get_Tp_allocator());
-    // ❗ Деструктор для каждого  ❗
+    // ❗ Деструктор для каждого объекта ❗
     this -> _M_impl._M_finish = __pos;
     _GLIBCXX_ASAN_ANNOTATE_SHRINK(__n);
   }
 }
 ```
+
+* pop_back
+Сложность: `O(1)`
+Перегрузки:
 ## Рост вектора и реаллокация
 
 ## `reserve`, `resize` и `shrink_to_fit`
