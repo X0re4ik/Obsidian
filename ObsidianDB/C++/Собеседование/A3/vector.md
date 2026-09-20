@@ -280,9 +280,23 @@ void pop_back() _GLIBCXX_NOEXCEPT {
 **Перегрузки:**
 
 ```C++
-// Удаление элмента по 
+// Удаление элмента на позиции
 iterator erase(const_iterator __position)
 { return _M_erase(begin() + (__position - cbegin())); }
+
+// _M_erase
+template < typename _Tp, typename _Alloc >
+  _GLIBCXX20_CONSTEXPR
+typename vector < _Tp, _Alloc > ::iterator
+vector < _Tp, _Alloc > ::
+  _M_erase(iterator __first, iterator __last) {
+    if (__first != __last) {
+      if (__last != end())
+        _GLIBCXX_MOVE3(__last, end(), __first);
+      _M_erase_at_end(__first.base() + (end() - __last));
+    }
+    return __first;
+  }
 ```
 
 ## Рост вектора и реаллокация
