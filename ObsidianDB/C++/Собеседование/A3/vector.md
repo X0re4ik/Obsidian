@@ -5,7 +5,7 @@
 
 ## Основы работы `std::vector`
 
-
+std::vector хранит данные в
 
 ## Устройство в памяти: `size`, `capacity`, contiguous storage
 
