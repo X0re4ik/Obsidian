@@ -315,9 +315,6 @@ std::vector<int> values{10, 20, 30, 40, 50};
 values.erase(values.begin() + 1, values.begin() + 4); // values == {10, 50}
 ```
 
-## Рост вектора и реаллокация
-
-
 ## `reserve`, `resize` и `shrink_to_fit`
 
 
