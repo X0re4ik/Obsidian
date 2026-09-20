@@ -149,6 +149,8 @@ source.at(10); // throw std::out_of_range
 
 ## Добавление, вставка и удаление элементов
 
+
+
 ## Рост вектора и реаллокация
 
 ## `reserve`, `resize` и `shrink_to_fit`
