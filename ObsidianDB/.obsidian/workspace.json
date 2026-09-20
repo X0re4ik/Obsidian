@@ -8,8 +8,25 @@
         "type": "tabs",
         "children": [
           {
+            "id": "3afb2b9e9a4e468b",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "C++/Собеседование/A3/А1. Краткий ответ по вопросам ДЗ№1.md",
+                "mode": "source",
+                "source": false
+              },
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "А1. Краткий ответ по вопросам ДЗ№1"
+            }
+          },
+          {
             "id": "ace20b4359ba6241",
             "type": "leaf",
+            "pinned": true,
             "state": {
               "type": "markdown",
               "state": {
@@ -17,6 +34,7 @@
                 "mode": "source",
                 "source": false
               },
+              "pinned": true,
               "icon": "lucide-file",
               "title": "vector"
             }
@@ -209,10 +227,10 @@
       "mermaid-tools:Open Mermaid Toolbar": false
     }
   },
-  "active": "ace20b4359ba6241",
+  "active": "3afb2b9e9a4e468b",
   "lastOpenFiles": [
-    "C++/Собеседование/A3/А1. Краткий ответ по вопросам ДЗ№1.md",
     "C++/Собеседование/A3/vector.md",
+    "C++/Собеседование/A3/А1. Краткий ответ по вопросам ДЗ№1.md",
     "C++/Собеседование/A2/А2. Краткий ответ по вопросам ДЗ№2.md",
     "C++/Собеседование/А1/А1. Краткий ответ по вопросам ДЗ№1.md",
     "C++/RVO и NRVO.md",
