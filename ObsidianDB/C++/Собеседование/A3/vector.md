@@ -156,10 +156,11 @@ source.at(10); // throw std::out_of_range
 **Перегрузки:**
 
 ```C++
-push_back(const value_type& __x)
-push_back(value_type&& __x)
-
+push_back(const value_type& __x) // (1)
+push_back(value_type&& __x)      // (2)
 ```
+
+`push_back` способен, как к копированию объекта (пример )
 
 ## Рост вектора и реаллокация
 
