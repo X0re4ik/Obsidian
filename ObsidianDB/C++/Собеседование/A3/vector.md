@@ -205,7 +205,7 @@ vector < _Tp, _Alloc > ::
 
 * `insert`
 
-**Сложность:** `O(1)`
+**Сложность:** `O(N)`
 **Перегрузки:**
 
 ```C++
@@ -311,8 +311,8 @@ iterator erase(const_iterator __first, const_iterator __last) {
   return _M_erase(__beg + (__first - __cbeg), __beg + (__last - __cbeg));
 }
 // Пример
-
-
+std::vector<int> values{10, 20, 30, 40, 50};
+values.erase(values.begin() + 1, values.begin() + 4); // values == {10, 50}
 ```
 
 ## Рост вектора и реаллокация
