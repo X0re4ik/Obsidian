@@ -25,7 +25,7 @@ private:
 ```C++
 int main() {
   std::vector<int> x_;
-  std::cout << sizeof(x_) << std::endl; \\ 
+  std::cout << sizeof(x_) << " bytes" << std::endl; // 24 bytes
 }
 ```
 
