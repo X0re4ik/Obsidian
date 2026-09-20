@@ -276,7 +276,7 @@ void pop_back() _GLIBCXX_NOEXCEPT {
 
 * erase - удаление объекта в произвольном месте массива
 
-**Сложность:** `O(N)` 
+**Сложность:** `O(N)` или `O(1)`
 **Перегрузки:**
 
 ```C++
@@ -288,6 +288,7 @@ std::vector<int> values{10, 20, 30, 40};
 values.erase(values.begin() + 1); // values == {10, 30, 40}
 
 // _M_erase
+// Алгоритм: Перемещаем элемент в конец 
 template < typename _Tp, typename _Alloc >
   _GLIBCXX20_CONSTEXPR
 typename vector < _Tp, _Alloc > ::iterator
