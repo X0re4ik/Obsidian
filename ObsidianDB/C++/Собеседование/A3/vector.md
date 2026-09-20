@@ -213,6 +213,9 @@ vector < _Tp, _Alloc > ::
 
 ```C++
 iterator insert(const_iterator __position, const value_type& __x);
+iterator insert(const_iterator __position, value_type&& __x);
+iterator insert(const_iterator __position, initializer_list<value_type> __l);
+iterator insert(const_iterator __position, _InputIterator __first, _InputIterator __last);
 
 ```
 
