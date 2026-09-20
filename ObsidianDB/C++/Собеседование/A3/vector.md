@@ -196,7 +196,7 @@ vector < _Tp, _Alloc > ::
     return back();
 ```
 
-`construct` создаёт объект `T` по указанному адресу
+
 
 
 
