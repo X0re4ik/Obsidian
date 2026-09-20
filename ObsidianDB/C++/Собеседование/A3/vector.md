@@ -274,7 +274,12 @@ void pop_back() _GLIBCXX_NOEXCEPT {
 }
 ```
 
+* erase - 
 
+```
+iterator erase(const_iterator __position)
+{ return _M_erase(begin() + (__position - cbegin())); }
+```
 ## Рост вектора и реаллокация
 
 ## `reserve`, `resize` и `shrink_to_fit`
