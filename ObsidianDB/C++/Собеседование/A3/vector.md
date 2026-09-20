@@ -196,6 +196,8 @@ vector < _Tp, _Alloc > ::
     return back();
 ```
 
+`construct` созда
+
 
 
 ## Рост вектора и реаллокация
