@@ -4,7 +4,7 @@
 * [16.1 — Introduction to containers and arrays](https://www.learncpp.com/cpp-tutorial/introduction-to-containers-and-arrays/)
 
 ## Основы работы `std::vector`
-<details><summary>Нажми, чтобы показать</summary>
+<details class="spoiler"><summary>Нажми, чтобы показать</summary>
 
 ывыв
 вывыывывывыв
@@ -22,6 +22,9 @@
 
 ||скрытый текст||
 ыывыв
+ывыв
+ывыв
+вывы
 
 `std::vector` - базовый контейнер, который входит в стандартную библиотеку `std`. `std::vector` хранит данные в одном непрерывном участке памяти. Память выделяется через **аллокатор**.
 
