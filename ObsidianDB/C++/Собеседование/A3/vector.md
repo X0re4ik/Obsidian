@@ -212,6 +212,7 @@ vector < _Tp, _Alloc > ::
 **Перегрузки:**
 
 ```C++
+iterator insert(const_iterator __position, const value_type& __x);
 
 ```
 
