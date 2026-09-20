@@ -288,13 +288,13 @@ std::vector<int> values{10, 20, 30, 40};
 values.erase(values.begin() + 1); // values == {10, 30, 40}
 
 // _M_erase
-// Алгоритм: Перемещаем элемент в конец, после удаляем элемент с конца
 template < typename _Tp, typename _Alloc >
   _GLIBCXX20_CONSTEXPR
 typename vector < _Tp, _Alloc > ::iterator
 vector < _Tp, _Alloc > ::
   _M_erase(iterator __position) {
     if (__position + 1 != end())
+	  // Сдвиг всех элментов справа на одну позицию влево
       _GLIBCXX_MOVE3(__position + 1, end(), __position);
     --this -> _M_impl._M_finish;
     _Alloc_traits::destroy(this -> _M_impl, this -> _M_impl._M_finish);
