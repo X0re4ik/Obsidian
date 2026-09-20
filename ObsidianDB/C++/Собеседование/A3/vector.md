@@ -320,7 +320,9 @@ values.erase(values.begin() + 1, values.begin() + 4); // values == {10, 50}
 
 ## `reserve`, `resize` и `shrink_to_fit`
 
+
 ## Итераторы, ссылки и invalidation
+
 
 ## Алгоритмы STL и удаление по условию
 
