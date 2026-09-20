@@ -160,12 +160,17 @@ push_back(const value_type& __x) // (1)
 push_back(value_type&& __x)      // (2)
 ```
 
-`push_back` способен, как к копированию объекта (пример `(1)`), так и к полному владению (пример `(2)`). Отметим, что перегрузка (2) "под капотом" выполняет `emplace_back`:
+`push_back` способен, как к копированию объекта (пример `(1)`), так и к полному владению (пример `(2)`). Отметим, что перегрузка `(2)` "под капотом" выполняет `emplace_back`:
+
 ```C++
-void
-push_back(value_type&& __x)
-{ emplace_back(std::move(__x)); }
+void push_back(value_type&& __x)
+{
+	emplace_back(std::move(__x));
+}
 ```
+
+`emplace_back` - 
+
 
 ## Рост вектора и реаллокация
 
