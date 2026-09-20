@@ -163,7 +163,8 @@ source.at(10); // throw std::out_of_range
 
 ## Производительность и сложность операций
 
-## Особые случаи: `vector<bool>`, `unique_ptr`, полиморфизм
+## Особые случаи: `vector<bool>`, `unique_ptr`, полиморфизм, `vector<int&>`
+
 
 ## Выбор контейнера, API и практика
 
