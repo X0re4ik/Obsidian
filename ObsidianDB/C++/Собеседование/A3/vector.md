@@ -320,6 +320,7 @@ values.erase(values.begin() + 1, values.begin() + 4); // values == {10, 50}
 
 ## Итераторы, ссылки и invalidation
 
+Главное правило работы с сылками и итер
 
 ## Алгоритмы STL и удаление по условию
 
