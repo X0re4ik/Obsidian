@@ -361,7 +361,7 @@ std::copy(v.begin(), v.end(), std::back_inserter(dst));
 
 4) `Bidirectional` - поддерживает все возможности `Forward`, но включает также движение назад
 
-**Контейнеры:** `std::list`, `std::map`, `std::map`
+**Контейнеры:** `std::list`, `std::set`, `std::map`, `std::multiset`, `std::multimap`
 
 **Операции:**
 ```C++
