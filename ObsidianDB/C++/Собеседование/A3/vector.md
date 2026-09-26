@@ -403,7 +403,6 @@ input
   └── forward
         └── bidirectional
               └── random access
-                    └── contiguous
 ```
 
 ## Алгоритмы STL и удаление по условию
