@@ -342,7 +342,9 @@ while (it != end) {
 
 **Пример (Сгенерирован Perplexity)**
 ```C++
-
+std::list<int> x{1, 2, 3, 4};
+auto it = std::begin(x);
+std::cout << *(++it) << '\n';
 ```
 
 3) `Forward` - читать писать, обходить диапазон многократно
