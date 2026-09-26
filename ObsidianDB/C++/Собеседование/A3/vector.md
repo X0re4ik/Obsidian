@@ -366,7 +366,7 @@ auto it = std::begin(input);
 std::cout << *(it + 3) << '\n'; // 4
 ```
 
-
+6) `Contiguous` - `Random-access` с гарантией, что данные лежат друг за другом
 
 ## Алгоритмы STL и удаление по условию
 
