@@ -397,7 +397,7 @@ auto it = std::begin(input);
 std::cout << *(it + 3) << '\n'; // 4
 ```
 
-6) `Contiguous` - 
+6) `Contiguous` - усиление `random_access_iterator` для контейнеров, что располагают данные в памяти сплошным блоком (такие как std:;vector) 
 
 Иерархия возможностей:
 ```C++
