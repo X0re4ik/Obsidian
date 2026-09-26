@@ -45,30 +45,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "C++/Собеседование/A3/vector.md",
+                "file": "C++/Собеседование/A3/А1. Краткий ответ по вопросам ДЗ№1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "vector"
-            }
-          },
-          {
-            "id": "7f265b184a91ad5f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "C++/Собеседование/A3/vector.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "vector"
+              "title": "А1. Краткий ответ по вопросам ДЗ№1"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -256,12 +242,13 @@
       "mermaid-tools:Open Mermaid Toolbar": false
     }
   },
-  "active": "7f265b184a91ad5f",
+  "active": "33b49bbf4d25c33b",
   "lastOpenFiles": [
-    "C++/Собеседование/A3/А1. Краткий ответ по вопросам ДЗ№1.md",
     "C++/Собеседование/A3/vector.md",
     "C++/Собеседование/A3/Без названия.md",
     "C++/Собеседование/A3/Итераторы.md",
+    "[[Итераторы.md",
+    "C++/Собеседование/A3/А1. Краткий ответ по вопросам ДЗ№1.md",
     "C++/users/Создание проекта.md",
     "AI/Промт.md",
     "C++/Виды связываний (external, internal, no linkage) для самых маленьких.md",
@@ -285,7 +272,6 @@
     "C++/Собеседование/A2/Методы класса.md",
     "C++/Собеседование/A2/Методы класса/Member initializer list.md",
     "C++/Собеседование/A2/Методы класса/Что такое конструктор копирования? Когда компилятор генерирует его неявно?.md",
-    "C++/Собеседование/A2/Методы класса/Зачем используется ключевое слово explicit?.md",
     "Linux",
     "Pasted image 20260627160703.png",
     "Pasted image 20260816094404.png",
