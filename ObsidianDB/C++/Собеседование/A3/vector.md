@@ -340,7 +340,24 @@ while (it != end) {
 }
 ```
 
-2) Output - итератор способный только на запись 
+2) Output - итератор способный только на запись элементов, не умеет читать
+
+**Пример**
+```C++
+#include <iterator>
+#include <vector>
+#include <algorithm>
+
+std::vector<int> v = {1, 2, 3};
+
+std::copy(v.begin(), v.end(),
+          std::ostream_iterator<int>(std::cout, " "));
+// выведет: 1 2 3
+
+std::vector<int> dst;
+std::copy(v.begin(), v.end(), std::back_inserter(dst));
+// dst = {1, 2, 3}
+```
 
 **Пример**
 ```C++
