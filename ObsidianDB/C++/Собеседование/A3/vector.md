@@ -397,7 +397,23 @@ auto it = std::begin(input);
 std::cout << *(it + 3) << '\n'; // 4
 ```
 
-6) `Contiguous` - усиление `random_access_iterator` для контейнеров, что располагают данные в памяти сплошным блоком (такие как std:;vector) 
+6) `Contiguous` - усиление `random_access_iterator` для контейнеров, что располагают данные в памяти сплошным блоком (такие как `std::vector` и `std::arary`)
+
+Для подобных итераторов справедливо:
+
+```C++
+std::vector<int> v{10, 20, 30};
+
+auto it = v.begin();
+
+std::cout << it[1];              // 20
+std::cout << *(it + 2);          // 30
+
+int* p1 = std::to_address(it);
+int* p2 = v.data();
+
+assert(p1 == p2);
+```
 
 Иерархия возможностей:
 ```C++
@@ -405,6 +421,9 @@ input
   └── forward
         └── bidirectional
               └── random access
+                    └── contiguous
+
+output — отдельная категория для последовательной записи
 ```
 
 ## Алгоритмы STL и удаление по условию
