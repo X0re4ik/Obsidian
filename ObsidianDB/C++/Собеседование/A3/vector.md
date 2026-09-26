@@ -363,7 +363,10 @@ it2 < it == false // Сравнение
 ```C++
 std::vector<int> input{1, 2, 3, 4, 5};
 auto it = std::begin(input);
+std::cout << *(it + 3) << '\n'; // 4
 ```
+
+
 
 ## Алгоритмы STL и удаление по условию
 
