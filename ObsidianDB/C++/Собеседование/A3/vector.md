@@ -324,8 +324,21 @@ values.erase(values.begin() + 1, values.begin() + 4); // values == {10, 50}
 
 Основные виды итераторов:
 1) Input - данные движутся только вперед
-Контейнеры
 
+**Пример (Сгенерирован Perplexity)**
+```C++
+std::istringstream input{"10 20 30"};
+
+std::istream_iterator<int> it(input);
+std::istream_iterator<int> end;
+
+while (it != end) {
+    int value = *it;
+    ++it;
+}
+```
+
+2) 
 
 ## Алгоритмы STL и удаление по условию
 
