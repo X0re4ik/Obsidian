@@ -359,6 +359,12 @@ it2 - it          // Расстояния между итераторами
 it2 < it == false // Сравнение
 ```
 
+**Пример**
+```C++
+std::vector<int> input{1, 2, 3, 4, 5};
+auto it = std::begin(input);
+```
+
 ## Алгоритмы STL и удаление по условию
 
 ## `push_back` vs `emplace_back`, copy и move
