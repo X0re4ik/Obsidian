@@ -340,28 +340,18 @@ while (it != end) {
 }
 ```
 
-2) Output - итератор способный только на запись элементов, не умеет читать
+2) `Output` - итератор способный только на запись элементов, не умеет читать. поддерживает только операцию вперед ()
 
 **Пример**
 ```C++
-#include <iterator>
-#include <vector>
-#include <algorithm>
-
-std::vector<int> v = {1, 2, 3};
-
+std::vector<int> v;
 std::copy(v.begin(), v.end(),
           std::ostream_iterator<int>(std::cout, " "));
-// выведет: 1 2 3
+// v = {1, 2, 3}
 
 std::vector<int> dst;
 std::copy(v.begin(), v.end(), std::back_inserter(dst));
 // dst = {1, 2, 3}
-```
-
-**Пример**
-```C++
-
 ```
 
 3) `Forward` - читать, писать, обходить диапазон многократно, но **только** вперед
