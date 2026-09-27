@@ -221,7 +221,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -242,7 +242,7 @@
       "mermaid-tools:Open Mermaid Toolbar": false
     }
   },
-  "active": "33b49bbf4d25c33b",
+  "active": "b1c8e24f3cf50c23",
   "lastOpenFiles": [
     "[[Итераторы.md",
     "Аналитика/Без названия.md",
