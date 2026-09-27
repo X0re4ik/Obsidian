@@ -171,7 +171,7 @@ CREATE TABLE etl_ca_proposal.initial_data (
 
 **Было**
 ```sql
-CREATE TABLE vsp_ca_proposals (
+CREATE TABLE etl_model.vsp_ca_proposals (
     id                    BIGSERIAL    PRIMARY KEY,
     urf_code              VARCHAR(255) NOT NULL,
     base_pos_id           BIGINT       NOT NULL,
