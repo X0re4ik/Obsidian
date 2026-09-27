@@ -227,17 +227,12 @@ CREATE TABLE vsp_ca_proposals (
 
 Добавить таблицу с фиксацией временного перевода ставки
 ```
-CREATE TABLE tmp_ (
+CREATE TABLE tmp_employee_position_transfer (
     id                    BIGSERIAL    PRIMARY KEY,
-    urf_code              VARCHAR(255) NOT NULL,
-    base_pos_id           BIGINT       NOT NULL,
-    
-    total_ftu             NUMERIC(10,3) NOT NULL, -- total_ftu = const_ftu + tmp_ftu
-    const_ftu             NUMERIC(10,3) NOT NULL, -- Постоянное предложение ЦА
-    tmp_ftu               NUMERIC(10,3) NOT NULL, -- Временное предложение ЦА
-    channel               VARCHAR(255) NOT NULL,
-    ca_proposal_file_id   BIGINT       NOT NULL,
-
+    proposal_id INT4,
+    from_vsp_id INT4,
+    to_vsp_id INT4, -- ВСП ку
+    employee_position_id INT4 -- Идентификатор ставки, которую переевли
     ....
 
     CONSTRAINT uq_vsp_ca_proposals_urf_code_base_pos_id
