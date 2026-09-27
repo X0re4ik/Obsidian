@@ -225,6 +225,34 @@ CREATE TABLE vsp_ca_proposals (
 
 **Change**
 
+Изменение в avro схеме
+
+```python
+
+from typing import Literal
+
+from dataclasses_avroschema.pydantic import AvroBaseModel
+
+
+class MyProposalByPosAvro(AvroBaseModel):
+    """
+    Мое предложение по основной эталонной должности
+    """
+
+    id: int  # noqa: A003
+    urf_code: str  # Идентификатор ВСП
+    et_main_pos_id: int  # Идентификатор эталонных должностей
+    ftu: float  # Общее число ПШЕ
+    diff_ftu: float  # Разница со занчением на момент старта итераци
+
+
+class BatchMyProposalByPosAvro(AvroBaseModel):
+    id: int  # noqa: A003
+    iteration_id: int
+    channel: Literal["vsp", "premier"]
+    items: list[MyProposalByPosAvro]
+```
+
 Добавить таблицу с фиксацией временного перевода ставки
 
 ```sql
