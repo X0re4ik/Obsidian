@@ -223,3 +223,25 @@ CREATE TABLE vsp_ca_proposals (
 В первой версии приложения **на начало старта** итерации Предложение ТБ = Постоянное предложение, а Временное предложние ТБ = 0. Но только в момент старта, в процессе итерации значения могут изменяться
 
 
+**Change**
+
+Добавить таблицу с фиксацией временного перевода ставки
+```
+CREATE TABLE tmp_ (
+    id                    BIGSERIAL    PRIMARY KEY,
+    urf_code              VARCHAR(255) NOT NULL,
+    base_pos_id           BIGINT       NOT NULL,
+    
+    total_ftu             NUMERIC(10,3) NOT NULL, -- total_ftu = const_ftu + tmp_ftu
+    const_ftu             NUMERIC(10,3) NOT NULL, -- Постоянное предложение ЦА
+    tmp_ftu               NUMERIC(10,3) NOT NULL, -- Временное предложение ЦА
+    channel               VARCHAR(255) NOT NULL,
+    ca_proposal_file_id   BIGINT       NOT NULL,
+
+    ....
+
+    CONSTRAINT uq_vsp_ca_proposals_urf_code_base_pos_id
+        UNIQUE (urf_code, base_pos_id)
+);
+```
+
