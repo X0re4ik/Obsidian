@@ -145,4 +145,6 @@ CREATE TABLE etl_ca_proposal.initial_data (
 );
 ```
 
-#### Изменение таблицы `etl_ca_proposal.initial_data`
+#### Изменение таблицы `etl_model.vsp_ca_proposals`
+
+**Было**
