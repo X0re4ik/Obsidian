@@ -53,9 +53,30 @@
    `ca_proposal = const_ca_proposal + tmp_ca_proposal`
 
 
-**Change**
+## Изменения в техническом контракте и структуре данных
 
-#### Изменение avro-схемы (контракт между **iuch-etl** и **metric-aggr**)
+В рамках задачи изменяются Avro-контракт между сервисами `iuch-etl` и
+`iuch-metric-aggr`, а также таблицы, через которые передаются и хранятся
+данные «Предложения ЦА».
+
+### Соответствие бизнес-полей и технических полей
+
+| Бизнес-поле | Поле Avro | Колонки БД |
+|---|---|---|
+| Предложение ЦА | `total_ftu` | `ftu` |
+| Постоянное предложение ЦА | `const_ftu` | `const_ftu` |
+| Временное предложение ЦА | `tmp_ftu` | `tmp_ftu` |
+
+Итоговое значение рассчитывается по формуле:
+
+```text
+total_ftu = const_ftu + tmp_ftu
+```
+
+### Изменение Avro-схемы
+
+Avro-схема является контрактом между сервисами `iuch-etl` и
+`iuch-metric-aggr`.
 
 ```python
 T = TypeVar("T", bound="BaseModelAvro")
@@ -112,14 +133,14 @@ class CAProposalBatchAvro(BatchBaseModelAvro[CAProposalAvro]):
 
 #### Изменение таблицы `etl_ca_proposal.initial_data`
 
->DDL является демонстрационным
+> DDL приведён для демонстрации состава и типов полей.
 
 **Было**
 ```sql
 CREATE TABLE etl_ca_proposal.initial_data (
     id                      INT8 PRIMARY KEY,
     ca_proposal_file_id     BIGINT       NOT NULL,
-    // ВНИМАНИЕ ftu VARCHAR - LEGACY
+    -- ВНИМАНИЕ: ftu — legacy-поле
     ftu                     VARCHAR  NOT NULL,
     tb_code                 VARCHAR  NOT NULL,
     gosb_code               VARCHAR  NOT NULL,
@@ -134,9 +155,10 @@ CREATE TABLE etl_ca_proposal.initial_data (
 CREATE TABLE etl_ca_proposal.initial_data (
     id                      INT8 PRIMARY KEY,
     ca_proposal_file_id     BIGINT       NOT NULL,
-    ftu                     VARCHAR  NULL, // ПОЛЕ НЕ ЗАПОЛНЯЕТСЯ, не удалять, чтобы иметь доступ к предыдущим значенимя
-    const_ftu               NUMERIC  NOT NULL, // Постоянное "Предложение ЦА"
-    tmp_ftu                 NUMERIC  NOT NULL, // Временное  "Предложение ЦА"
+    -- Поле не заполняется; сохраняется для доступа к предыдущим значениям
+    ftu                     VARCHAR  NULL,
+    const_ftu               NUMERIC  NOT NULL, -- Постоянное предложение ЦА
+    tmp_ftu                 NUMERIC  NOT NULL, -- Временное предложение ЦА
     tb_code                 VARCHAR  NOT NULL,
     gosb_code               VARCHAR  NOT NULL,
     vsp_code                VARCHAR  NOT NULL,
@@ -171,9 +193,9 @@ CREATE TABLE vsp_ca_proposals (
     urf_code              VARCHAR(255) NOT NULL,
     base_pos_id           BIGINT       NOT NULL,
     
-    ftu                   NUMERIC(10,3) NOT NULL, // ftu = const_ftu + tmp_ftu
-    const_ftu             NUMERIC(10,3)  NOT NULL, // Постоянное "Предложение ЦА"
-    tmp_ftu               NUMERIC(10,3)  NOT NULL, // Временное  "Предложение ЦА"
+    ftu                   NUMERIC(10,3) NOT NULL, -- ftu = const_ftu + tmp_ftu
+    const_ftu             NUMERIC(10,3) NOT NULL, -- Постоянное предложение ЦА
+    tmp_ftu               NUMERIC(10,3) NOT NULL, -- Временное предложение ЦА
     channel               VARCHAR(255) NOT NULL,
     ca_proposal_file_id   BIGINT       NOT NULL,
 
