@@ -45,12 +45,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Аналитика/Без названия.md",
+                "file": "Аналитика/constVStmp численность.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Без названия"
+              "title": "constVStmp численность"
             }
           }
         ],
@@ -242,10 +242,10 @@
       "mermaid-tools:Open Mermaid Toolbar": false
     }
   },
-  "active": "c6d59203d42c7a4a",
+  "active": "33b49bbf4d25c33b",
   "lastOpenFiles": [
     "[[Итераторы.md",
-    "Аналитика/Без названия.md",
+    "Аналитика/constVStmp численность.md",
     "Аналитика",
     "C++/Собеседование/A3/А1. Краткий ответ по вопросам ДЗ№1.md",
     "C++/Собеседование/A3/Итераторы.md",
