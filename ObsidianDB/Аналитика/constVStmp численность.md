@@ -56,5 +56,6 @@
    `ca_proposal = const_ca_proposal + tmp_ca_proposal`
 
 
-Ch
-****
+**Change**
+
+Изменение avro-схемы ()
