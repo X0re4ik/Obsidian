@@ -233,7 +233,7 @@ from typing import Literal
 
 from dataclasses_avroschema.pydantic import AvroBaseModel
 
-
+# Было:
 class MyProposalByPosAvro(AvroBaseModel):
     """
     Мое предложение по основной эталонной должности
@@ -243,14 +243,22 @@ class MyProposalByPosAvro(AvroBaseModel):
     urf_code: str  # Идентификатор ВСП
     et_main_pos_id: int  # Идентификатор эталонных должностей
     ftu: float  # Общее число ПШЕ
-    diff_ftu: float  # Разница со занчением на момент старта итераци
+    diff_ftu: float  # (legacy) Разница со занчением на момент старта итераци
 
+# Стало:
+class MyProposalByPosAvro(AvroBaseModel):
+    """
+    Мое предложение по основной эталонной должности
+    """
 
-class BatchMyProposalByPosAvro(AvroBaseModel):
     id: int  # noqa: A003
-    iteration_id: int
-    channel: Literal["vsp", "premier"]
-    items: list[MyProposalByPosAvro]
+    urf_code: str  # Идентификатор ВСП
+    et_main_pos_id: int  # Идентификатор эталонных должностей
+    total_ftu: float  # Общее число ПШЕ (tmp_ftu + const_ftu)
+    const_ftu: float  # Общее число ПШЕ (tmp_ftu + const_ftu)
+    _ftu: float  # Общее число ПШЕ (tmp_ftu + const_ftu)
+
+
 ```
 
 Добавить таблицу с фиксацией временного перевода ставки
