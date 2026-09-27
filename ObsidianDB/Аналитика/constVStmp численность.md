@@ -119,6 +119,7 @@ class CAProposalBatchAvro(BatchBaseModelAvro[CAProposalAvro]):
 CREATE TABLE etl_ca_proposal.initial_data (
     id                      INT8 PRIMARY KEY,
     ca_proposal_file_id     BIGINT       NOT NULL,
+    // ВНИМАНИЕ ftu VARCHAR - LEGACY
     ftu                     VARCHAR  NOT NULL,
     tb_code                 VARCHAR  NOT NULL,
     gosb_code               VARCHAR  NOT NULL,
@@ -133,7 +134,9 @@ CREATE TABLE etl_ca_proposal.initial_data (
 CREATE TABLE etl_ca_proposal.initial_data (
     id                      INT8 PRIMARY KEY,
     ca_proposal_file_id     BIGINT       NOT NULL,
-    ftu                     VARCHAR  NOT NULL,
+    ftu                     VARCHAR  NULL, // 
+    const_ftu               NUMERIC  NOT NULL,
+    tmp_ftu                 NUMERIC  NOT NULL,
     tb_code                 VARCHAR  NOT NULL,
     gosb_code               VARCHAR  NOT NULL,
     vsp_code                VARCHAR  NOT NULL,
