@@ -217,5 +217,7 @@ CREATE TABLE vsp_ca_proposals (
 **Задача:** 
 Добавить 3 колонки:
 * Предложение ТБ (`proposal_ftu`)
-* Постоянное предложение ЦА (`const_ca_proposal`)
-* Временное предложение ЦА (`tmp_ca_proposal`)
+* Постоянное предложение ТБ (`const_proposal_ftu`)
+* Временное предложние ТБ (`tmp_proposal_ftu`)
+
+В первой версии прило
