@@ -63,7 +63,7 @@
 
 | Бизнес-поле | Поле Avro | Колонки БД |
 |---|---|---|
-| Предложение ЦА | `total_ftu` | `ftu` |
+| Предложение ЦА | `total_ftu` | `total_ftu` |
 | Постоянное предложение ЦА | `const_ftu` | `const_ftu` |
 | Временное предложение ЦА | `tmp_ftu` | `tmp_ftu` |
 
@@ -72,6 +72,11 @@
 ```text
 total_ftu = const_ftu + tmp_ftu
 ```
+
+В итоговой таблице `etl_model.vsp_ca_proposals` поле `ftu` переименовывается
+в `total_ftu`. Переименование связано с изменением смысла поля: теперь оно
+хранит итоговое значение, рассчитанное как сумма постоянной и временной частей
+предложения ЦА.
 
 ### Изменение Avro-схемы
 
@@ -193,7 +198,7 @@ CREATE TABLE vsp_ca_proposals (
     urf_code              VARCHAR(255) NOT NULL,
     base_pos_id           BIGINT       NOT NULL,
     
-    ftu                   NUMERIC(10,3) NOT NULL, -- ftu = const_ftu + tmp_ftu
+    total_ftu             NUMERIC(10,3) NOT NULL, -- total_ftu = const_ftu + tmp_ftu
     const_ftu             NUMERIC(10,3) NOT NULL, -- Постоянное предложение ЦА
     tmp_ftu               NUMERIC(10,3) NOT NULL, -- Временное предложение ЦА
     channel               VARCHAR(255) NOT NULL,
@@ -205,3 +210,6 @@ CREATE TABLE vsp_ca_proposals (
         UNIQUE (urf_code, base_pos_id)
 );
 ```
+
+
+### Добавление лейбла временное перемещение сс
