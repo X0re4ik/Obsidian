@@ -28,5 +28,6 @@
 	1) Обновление таблицы `etl_model.vsp_ca_proposal`
 	2) Помечает данные ключём `batch_id`
 	3) Отправка данных в `kafka` батчами (примерно по 10 000 в одном батче)
-4) Сервис `iuch-metric-aggr` обнуляет все данные, чей `ca_proposal_file_id != batch_id` (таблица `metric_aggr.aggregat)
+4) Сервис `iuch-metric-aggr` обнуляет все данные, чей `ca_proposal_file_id != batch_id` (таблица `metric_aggr.aggregated_data`)
+	1) `ca_proposal_file_id` - идентификатор актуаль
 5) Сервис `iuch-metric-aggr` записывает данные в колонки 1 в 1 из исходных данных
