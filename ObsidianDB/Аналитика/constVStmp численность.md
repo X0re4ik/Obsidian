@@ -60,4 +60,40 @@
 
 Изменение avro-схемы (контракт между **iuch-etl** и **metric-aggr**)
 
+**Было:**
+```
+class BatchBaseModelAvro(AvroBaseModel, Generic[T]):
+    id: int  # noqa: A003
+    items: list[T]
+
+
+class BaseModelAvro(AvroBaseModel):
+    id: int  # noqa: A003
+    schema_version: str
+    is_deleted: bool = False
+    created_at: datetime
+    updated_at: datetime
+
+    class Config:
+        json_encoders = {
+            datetime: lambda v: int(v.timestamp() * 1000),
+        }
+
+class CAProposalAvro(BaseModelAvro):
+    """
+    Предложение ЦА
+    """
+
+    urf_code: str
+    base_pos_id: int
+    ftu: float
+    channel: str
+    ca_proposal_file_id: int
+
+
+class CAProposalBatchAvro(BatchBaseModelAvro[CAProposalAvro]):
+    """
+    Предложение ЦА в формате батчей
+    """
+```
 
