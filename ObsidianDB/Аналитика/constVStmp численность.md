@@ -134,7 +134,7 @@ CREATE TABLE etl_ca_proposal.initial_data (
 CREATE TABLE etl_ca_proposal.initial_data (
     id                      INT8 PRIMARY KEY,
     ca_proposal_file_id     BIGINT       NOT NULL,
-    ftu                     VARCHAR  NULL, // ПОЛЕ НЕ ЗАПОЛНЯЕТСЯ
+    ftu                     VARCHAR  NULL, // ПОЛЕ НЕ ЗАПОЛНЯЕТСЯ, не удалять, чтобы иметь доступ к предыдущим значенимя
     const_ftu               NUMERIC  NOT NULL, // Постоянное "Предложение ЦА"
     tmp_ftu                 NUMERIC  NOT NULL, // Временное  "Предложение ЦА"
     tb_code                 VARCHAR  NOT NULL,
