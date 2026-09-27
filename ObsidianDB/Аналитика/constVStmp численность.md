@@ -226,12 +226,13 @@ CREATE TABLE vsp_ca_proposals (
 **Change**
 
 Добавить таблицу с фиксацией временного перевода ставки
-```
+
+```sql
 CREATE TABLE tmp_employee_position_transfer (
     id                    BIGSERIAL    PRIMARY KEY,
-    proposal_id INT4,
-    from_vsp_id INT4,
-    to_vsp_id INT4, -- ВСП ку
+    proposal_id INT4, -- Идентификатор предложения
+    from_vsp_id INT4, -- ВСП откуда времено переевли ставку
+    to_vsp_id INT4, -- ВСП куда временное перевели ставку
     employee_position_id INT4 -- Идентификатор ставки, которую переевли
     ....
 
