@@ -134,9 +134,9 @@ CREATE TABLE etl_ca_proposal.initial_data (
 CREATE TABLE etl_ca_proposal.initial_data (
     id                      INT8 PRIMARY KEY,
     ca_proposal_file_id     BIGINT       NOT NULL,
-    ftu                     VARCHAR  NULL, // 
-    const_ftu               NUMERIC  NOT NULL,
-    tmp_ftu                 NUMERIC  NOT NULL,
+    ftu                     VARCHAR  NULL, // ПОЛЕ НЕ ЗАПОЛНЯЕТСЯ
+    const_ftu               NUMERIC  NOT NULL, // Постоянное "Предложение ЦА"
+    tmp_ftu                 NUMERIC  NOT NULL, // Временное  "Предложение ЦА"
     tb_code                 VARCHAR  NOT NULL,
     gosb_code               VARCHAR  NOT NULL,
     vsp_code                VARCHAR  NOT NULL,
@@ -144,3 +144,5 @@ CREATE TABLE etl_ca_proposal.initial_data (
     urf_code                VARCHAR NOT NULL,
 );
 ```
+
+#### Изменение таблицы `etl_ca_proposal.initial_data`
