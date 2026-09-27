@@ -119,8 +119,8 @@ class CAProposalAvro(BaseModelAvro):
     urf_code: str
     base_pos_id: int
     total_ftu: float # Общая сумма Предложение ЦА (tmp_ftu + const_ftu)
-    tmp_ftu: float
-    const_ftu: float
+    tmp_ftu: float # Временное Предложение ЦА
+    const_ftu: float # Постоянное Предложение ЦА
     channel: str
     ca_proposal_file_id: int
 
@@ -140,7 +140,7 @@ class CAProposalBatchAvro(BatchBaseModelAvro[CAProposalAvro]):
 CREATE TABLE etl_ca_proposal.initial_data (
     id                      INT8 PRIMARY KEY,
     ca_proposal_file_id     BIGINT       NOT NULL,
-    -- ВНИМАНИЕ: ftu — legacy-поле
+    -- ВНИМАНИЕ: ftu - legacy-поле, поэтому оно VARCHAR
     ftu                     VARCHAR  NOT NULL,
     tb_code                 VARCHAR  NOT NULL,
     gosb_code               VARCHAR  NOT NULL,
@@ -186,8 +186,8 @@ CREATE TABLE vsp_ca_proposals (
 );
 ```
 
-Стало
-```
+**Стало**
+```sql
 CREATE TABLE vsp_ca_proposals (
     id                    BIGSERIAL    PRIMARY KEY,
     urf_code              VARCHAR(255) NOT NULL,
