@@ -55,7 +55,7 @@
 
 **Change**
 
-Изменение avro-схемы (контракт между **iuch-etl** и **metric-aggr**)
+#### Изменение avro-схемы (контракт между **iuch-etl** и **metric-aggr**)
 
 ```python
 T = TypeVar("T", bound="BaseModelAvro")
@@ -110,3 +110,4 @@ class CAProposalBatchAvro(BatchBaseModelAvro[CAProposalAvro]):
     """
 ```
 
+#### Изменение таблицы ``
