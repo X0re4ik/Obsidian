@@ -115,7 +115,7 @@ class CAProposalBatchAvro(BatchBaseModelAvro[CAProposalAvro]):
 >DDL является демонстрационным
 
 **Было**
-```
+```sql
 CREATE TABLE etl_ca_proposal.initial_data (
     id                      INT8 PRIMARY KEY,
     ca_proposal_file_id     BIGINT       NOT NULL,
@@ -130,7 +130,7 @@ CREATE TABLE etl_ca_proposal.initial_data (
 ```
 
 **Стало**
-```
+```sql
 CREATE TABLE etl_ca_proposal.initial_data (
     id                      INT8 PRIMARY KEY,
     ca_proposal_file_id     BIGINT       NOT NULL,
@@ -148,3 +148,18 @@ CREATE TABLE etl_ca_proposal.initial_data (
 #### Изменение таблицы `etl_model.vsp_ca_proposals`
 
 **Было**
+```sql
+CREATE TABLE vsp_ca_proposals (
+    id                    BIGSERIAL    PRIMARY KEY,
+    urf_code              VARCHAR(255) NOT NULL,
+    base_pos_id           BIGINT       NOT NULL,
+    ftu                   NUMERIC(10,3) NOT NULL,
+    channel               VARCHAR(255) NOT NULL,
+    ca_proposal_file_id   BIGINT       NOT NULL,
+    -- если ETLModelModel добавляет timestamps:
+    created_at            TIMESTAMPTZ  NOT NULL DEFAULT now(),
+    updated_at            TIMESTAMPTZ  NOT NULL DEFAULT now(),
+    CONSTRAINT uq_vsp_ca_proposals_urf_code_base_pos_id
+        UNIQUE (urf_code, base_pos_id)
+);
+```
