@@ -110,4 +110,18 @@ class CAProposalBatchAvro(BatchBaseModelAvro[CAProposalAvro]):
     """
 ```
 
-#### Изменение таблицы ``
+#### Изменение таблицы `etl_ca_proposal.initial_data`
+
+
+```
+CREATE TABLE etl_ca_proposal.initial_data (
+    id                      INT8 PRIMARY KEY,
+    ca_proposal_file_id     BIGINT       NOT NULL,
+    ftu                     VARCHAR  NOT NULL,
+    tb_code                 VARCHAR  NOT NULL,
+    gosb_code               VARCHAR  NOT NULL,
+    vsp_code                VARCHAR  NOT NULL,
+    etalon_pos_id           VARCHAR NOT NULL,
+    urf_code                VARCHAR NOT NULL,
+);
+```
