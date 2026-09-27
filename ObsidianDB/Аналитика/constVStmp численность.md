@@ -280,9 +280,6 @@ tmp_ftu = 2 - 1 = 1
 Если в ВСП вошли две новыые ставки, то tmp_ftu = 2, const_ftu = 4, total_ftu = 6
 
 
-Алгоритм расчёта const_ftu и tmp_ftu внтри сервиса: расчитать total_ftu как обычное (сумма всех ставок внутри ВСП), найти все временные ставки ВОШЕДШИЕ В ВСП = tmp_ftu, тогда const_ftu = total_ftu - tmp_ftu, найти все временные ставки, которые вышли из ВСП = -tmp_ftu, тогда const_ftu = total_ftu - (-tmp_ftu) =  const_ftu = total_ftu + tmp_ftu
-
-
 **Change**
 
 Изменение в avro схеме
