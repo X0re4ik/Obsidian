@@ -118,7 +118,7 @@ class CAProposalAvro(BaseModelAvro):
 
     urf_code: str
     base_pos_id: int
-    total_ftu: float
+    total_ftu: float # Общая сумма Предложение ЦА (tmp_ftu + const_ftu)
     tmp_ftu: float
     const_ftu: float
     channel: str
