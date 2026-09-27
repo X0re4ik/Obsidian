@@ -255,9 +255,9 @@ class MyProposalByPosAvro(AvroBaseModel):
     urf_code: str  # Идентификатор ВСП
     et_main_pos_id: int  # Идентификатор эталонных должностей
     total_ftu: float  # Общее число ПШЕ (tmp_ftu + const_ftu)
-    const_ftu: float  #  (tmp_ftu + const_ftu)
-    tmp_ftu: float  # Временное число ПШЕ (tmp_ftu + const_ftu)
-
+    const_ftu: float  # Постоянное число ПШЕ
+    tmp_ftu: float  # Временное число ПШЕ
+    
 
 ```
 
