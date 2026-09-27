@@ -35,17 +35,14 @@
 4. Сервис `iuch-metric-aggr` получает данные из `Kafka` и обрабатывает их
    в таблице `metric_aggr.aggregated_data`.
 
-5. Для определения актуальной загрузки значение `batch_id` записывается
-   в поле `ca_proposal_file_id`.
-
-6. Сервис `iuch-metric-aggr` обнуляет значения всех предыдущих загрузок,
-   для которых `ca_proposal_file_id != batch_id`.
+5. Сервис `iuch-metric-aggr` обнуляет значения всех предыдущих загрузок,
+   для которых `ca_proposal_file_id != avro.ca_proposal_file_id`.
    Обнуляются следующие поля:
    - `ca_proposal`;
    - `const_ca_proposal`;
    - `tmp_ca_proposal`.
 
-7. Сервис `iuch-metric-aggr` записывает значения из исходных Avro-данных
+6. Сервис `iuch-metric-aggr` записывает значения из исходных Avro-данных
    без модификации:
    - `ca_proposal` — значение поля `ca_proposal`;
    - `const_ca_proposal` — значение поля `const_ca_proposal`;
@@ -100,7 +97,9 @@ class CAProposalAvro(BaseModelAvro):
 
     urf_code: str
     base_pos_id: int
-    totalftu: float
+    total_ftu: float
+    tmp_ftu: float
+    const_ftu: float
     channel: str
     ca_proposal_file_id: int
 
