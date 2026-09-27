@@ -25,6 +25,6 @@
 2) Сервис `iuch-etl` загружает данные 1 в 1 в таблице `etl_ca_proposal.initial_data`
 3) Сервис `iuch-etl` запускает `pipeline` отправки данных в `Kafka`
 	1) Обновление таблицы `etl_model.vsp_ca_proposal`
-	2) Помечает данные ключём batch_id
+	2) Помечает данные ключём `batch_id`
 	3) Отправка данных в `kafka`
-4) Сервис `iuch-metric-aggr` сбрасывает обнуляет текущие
+4) Сервис `iuch-metric-aggr` обнудяет все данные, чей 
