@@ -27,4 +27,5 @@
 	1) Обновление таблицы `etl_model.vsp_ca_proposal`
 	2) Помечает данные ключём `batch_id`
 	3) Отправка данных в `kafka`
-4) Сервис `iuch-metric-aggr` обнудяет все данные, чей 
+4) Сервис `iuch-metric-aggr` обнуляет все данные, чей `ca_proposal_file_id != batch_id`
+5) Сервис `iuch-metric-aggr` записывает данные в колонки
