@@ -257,7 +257,7 @@ class MyProposalByPosAvro(AvroBaseModel):
     total_ftu: float  # Общее число ПШЕ (tmp_ftu + const_ftu)
     const_ftu: float  # Постоянное число ПШЕ
     tmp_ftu: float  # Временное число ПШЕ
-    
+    fos_ftu: float # ПШЕ на момент старта итерации по структуре ФОС
 
 ```
 
