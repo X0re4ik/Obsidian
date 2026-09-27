@@ -345,6 +345,7 @@ class MyProposalByPosAvro(AvroBaseModel):
 ```sql
 CREATE TABLE tmp_employee_position_transfer (
     id                    BIGSERIAL PRIMARY KEY,
+    iteration_id          BIGINT NOT NULL, -- Идентификатор итерации
     proposal_id           BIGINT NOT NULL, -- Идентификатор предложения ТБ
     from_vsp_id           BIGINT NOT NULL, -- ВСП, из которого вышла ставка
     to_vsp_id             BIGINT NOT NULL, -- ВСП, в который вошла ставка
