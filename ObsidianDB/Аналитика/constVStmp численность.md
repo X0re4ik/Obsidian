@@ -22,16 +22,39 @@
 
 **Алгоритм работы процесса:**
 
-1) Пользователь загружает "Предложение ЦА" (new)
-2) Сервис `iuch-etl` загружает данные 1 в 1 в таблице `etl_ca_proposal.initial_data`
-3) Сервис `iuch-etl` запускает `pipeline` отправки данных в `Kafka`
-	1) Обновление таблицы `etl_model.vsp_ca_proposal`
-	2) Помечает данные ключём `batch_id`
-	3) Отправка данных в `kafka` батчами (примерно по 10 000 в одном батче)
-4) Сервис `iuch-metric-aggr` обнуляет все данные, чей `ca_proposal_file_id != batch_id` (таблица `metric_aggr.aggregated_data`)
-	* `batch_id` используется как идентификатор загрузки файла и записывается в поле `ca_proposal_file_id`
-	* Обнуление происходт всех трех полей: `ca_proposal`, `const_ca_proposal`, `tmp_ca_proposal`
-5) Сервис `iuch-metric-aggr` записывает данные в колонки из исходных данных **без модификации**, то есть:
-	* Колонка "Предложение ЦА" = `ca_proposal` из исходных `avro` данных
-	* Колонка "Постоянное предложение ЦА" = `const_ca_proposal` из исходных `avro` данных
-	* Колонка "Временное предложение ЦА " = `tmp_ca_proposal` из исходных `avro` данных
+1. Пользователь загружает новый файл «Предложение ЦА».
+
+2. Сервис `iuch-etl`:
+   - сохраняет данные файла в таблицу `etl_ca_proposal.initial_data`;
+   - обновляет данные в таблице `etl_model.vsp_ca_proposal`;
+   - присваивает данным идентификатор текущей загрузки `batch_id`.
+
+3. Сервис `iuch-etl` запускает pipeline передачи данных в `Kafka`.
+   Данные передаются батчами примерно по 10 000 записей.
+
+4. Сервис `iuch-metric-aggr` получает данные из `Kafka` и обрабатывает их
+   в таблице `metric_aggr.aggregated_data`.
+
+5. Для определения актуальной загрузки значение `batch_id` записывается
+   в поле `ca_proposal_file_id`.
+
+6. Сервис `iuch-metric-aggr` обнуляет значения всех предыдущих загрузок,
+   для которых `ca_proposal_file_id != batch_id`.
+   Обнуляются следующие поля:
+   - `ca_proposal`;
+   - `const_ca_proposal`;
+   - `tmp_ca_proposal`.
+
+7. Сервис `iuch-metric-aggr` записывает значения из исходных Avro-данных
+   без модификации:
+   - `ca_proposal` — значение поля `ca_proposal`;
+   - `const_ca_proposal` — значение поля `const_ca_proposal`;
+   - `tmp_ca_proposal` — значение поля `tmp_ca_proposal`.
+
+   Значения должны соответствовать формуле:
+
+   `ca_proposal = const_ca_proposal + tmp_ca_proposal`
+
+
+Ch
+****
