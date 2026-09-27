@@ -60,8 +60,9 @@
 
 Изменение avro-схемы (контракт между **iuch-etl** и **metric-aggr**)
 
-**Было:**
-```
+```python
+T = TypeVar("T", bound="BaseModelAvro")
+
 class BatchBaseModelAvro(AvroBaseModel, Generic[T]):
     id: int  # noqa: A003
     items: list[T]
@@ -79,6 +80,7 @@ class BaseModelAvro(AvroBaseModel):
             datetime: lambda v: int(v.timestamp() * 1000),
         }
 
+# Было:
 class CAProposalAvro(BaseModelAvro):
     """
     Предложение ЦА
@@ -87,6 +89,18 @@ class CAProposalAvro(BaseModelAvro):
     urf_code: str
     base_pos_id: int
     ftu: float
+    channel: str
+    ca_proposal_file_id: int
+
+# Стало:
+class CAProposalAvro(BaseModelAvro):
+    """
+    Предложение ЦА
+    """
+
+    urf_code: str
+    base_pos_id: int
+    totalftu: float
     channel: str
     ca_proposal_file_id: int
 
