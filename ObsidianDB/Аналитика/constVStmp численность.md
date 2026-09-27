@@ -163,3 +163,22 @@ CREATE TABLE vsp_ca_proposals (
         UNIQUE (urf_code, base_pos_id)
 );
 ```
+
+Стало
+```
+CREATE TABLE vsp_ca_proposals (
+    id                    BIGSERIAL    PRIMARY KEY,
+    urf_code              VARCHAR(255) NOT NULL,
+    base_pos_id           BIGINT       NOT NULL,
+    ftu                   NUMERIC(10,3) NOT NULL,
+    const_ftu              NUMERIC  NOT NULL, // Постоянное "Предложение ЦА"
+    tmp_ftu                 NUMERIC  NOT NULL, // Временное  "Предложение ЦА"
+    channel               VARCHAR(255) NOT NULL,
+    ca_proposal_file_id   BIGINT       NOT NULL,
+    -- если ETLModelModel добавляет timestamps:
+    created_at            TIMESTAMPTZ  NOT NULL DEFAULT now(),
+    updated_at            TIMESTAMPTZ  NOT NULL DEFAULT now(),
+    CONSTRAINT uq_vsp_ca_proposals_urf_code_base_pos_id
+        UNIQUE (urf_code, base_pos_id)
+);
+```
