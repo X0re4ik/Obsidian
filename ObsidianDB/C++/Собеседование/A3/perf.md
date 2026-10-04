@@ -3,3 +3,8 @@
 ```bash
 perf stat ./build/bin/h1_test
 ```
+
+Всего можно выделить 3 ключевых инструмента `perf`:
+* `perf stat` - Сколько ресурсов потребляет программа
+* `perf record` - 
+* `perf trace`
