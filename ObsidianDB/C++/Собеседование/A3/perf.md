@@ -9,3 +9,6 @@ perf stat ./build/bin/h1_test
 * `perf record` - Где именно тратится `CPU` - время?
 * `perf trace` - Какие системные вызовы делает программа?
 
+`perf stat`
+
+* 
