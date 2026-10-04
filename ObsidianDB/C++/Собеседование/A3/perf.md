@@ -33,4 +33,6 @@ perf stat ./build/bin/h1_test
 0,003917000 seconds sys
 ```
 
-`time elapsed` - 
+`time elapsed` - Сколько времени работала программа
+`user` - время работы в `user space`
+`sys` - время работы в `kernal space`
