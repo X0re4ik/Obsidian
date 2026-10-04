@@ -11,5 +11,6 @@ perf stat ./build/bin/h1_test
 
 `perf stat`
 
-`context-switches` - Ядро Linux остановило выполнение потока и переклчала CPU на другой поток.
+`context-switches` - ядро Linux остановило выполнение потока и переклчала CPU на другой поток.
 Большое значение `context-switches` симптом частых переключений, значит, программа чего-то постоянно ждёт.
+`cpu-migrations` - ми
