@@ -533,17 +533,17 @@ int main() {
 valgrind   --tool=memcheck   --leak-check=full   --show-leak-kinds=all   --track-origins=yes   ./app
 ```
 
-| Опция | Назначение |
-|---|---|
-| `--tool=memcheck` | Выбрать Memcheck |
-| `--leak-check=full` | Показать подробности утечек |
-| `--show-leak-kinds=all` | Вывести все категории утечек |
-| `--track-origins=yes` | Искать происхождение неинициализированных значений |
-| `--log-file=...` | Перенаправить диагностику Valgrind в файл |
-| `--error-exitcode=N` | Вернуть код N, если Memcheck нашёл ошибки |
-| `--errors-for-leak-kinds=...` | Выбрать категории утечек, считающиеся ошибками |
-| `--gen-suppressions=all` | Напечатать шаблоны suppression-правил |
-| `--suppressions=file.supp` | Подключить suppression-файл |
+| Опция                         | Назначение                                         |
+| ----------------------------- | -------------------------------------------------- |
+| `--tool=memcheck`             | Выбрать Memcheck                                   |
+| `--leak-check=full`           | Показать подробности утечек                        |
+| `--show-leak-kinds=all`       | Вывести все категории утечек                       |
+| `--track-origins=yes`         | Искать происхождение неинициализированных значений |
+| `--log-file=...`              | Перенаправить диагностику Valgrind в файл          |
+| `--error-exitcode=N`          | Вернуть код N, если Memcheck нашёл ошибки          |
+| `--errors-for-leak-kinds=...` | Выбрать категории утечек, считающиеся ошибками     |
+| `--gen-suppressions=all`      | Напечатать шаблоны suppression-правил              |
+| `--suppressions=file.supp`    | Подключить suppression-файл                        |
 
 ### `--track-origins=yes`
 
