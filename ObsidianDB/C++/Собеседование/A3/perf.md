@@ -9,7 +9,7 @@ perf stat ./build/bin/h1_test
 * `perf record` - Где именно тратится `CPU` - время?
 * `perf trace` - Какие системные вызовы делает программа?
 
-`perf stat`
+### perf stat
 
 Пример работы:
 
@@ -47,4 +47,5 @@ CPU utilization = CPU time / time elapsed = 0.01096800 / 0,014385453 = 0.762
 ```
 Таким образом, `76%` мощности одного ядра было использована при работе программы.
 
+### perf record
 
