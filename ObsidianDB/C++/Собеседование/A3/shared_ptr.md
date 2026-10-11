@@ -155,6 +155,8 @@ new ControlBlock<T>(x)
 То, `combined_control_block` хранит объект внутри себя:
 ```
 make_shared() {
-	auto* cb = combined_control_block()
+	alignas(T) unsigned char buffer[sizeof(T)];
+	T* p = new (buffer) T(args...);
+	std::
 }
 ```
