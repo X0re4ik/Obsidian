@@ -154,7 +154,7 @@ struct combined_control_block : control_block
 auto x = new T()
 new ControlBlock<T>(x)
 ```
-То, `combined_control_block` хранит объект внутри себя:
+То, `combined_control_block` хранит объект внутри себя, соответсвенно память вы:
 ```C++
 template<typename T, typename... Args>
 shared_ptr<T> make_shared(Args&&... args)
