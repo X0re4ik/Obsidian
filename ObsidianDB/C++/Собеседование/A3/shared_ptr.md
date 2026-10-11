@@ -152,4 +152,5 @@ struct combined_control_block : control_block
 auto x = new T()
 new ControlBlock<T>(x)
 ```
-То, 
+То, `combined_control_block` хранит объект внутри себя:
+
