@@ -176,4 +176,4 @@ shared_ptr<T> make_shared(Args&&... args)
 1) Контрольный блок по-разному создаётся для `std::shared_ptr` и `std::make_shared`
 2) Вариант с `std::make_shared` предпочтительней из-за меньших выделений памяти
 3) В основе контрольного блока `combined_control_block` лежит механизм `placement new`
-4) 
+
