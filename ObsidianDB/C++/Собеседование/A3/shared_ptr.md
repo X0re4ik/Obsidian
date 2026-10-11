@@ -269,3 +269,32 @@ int main() {
 Когда именно выведется `~S`: при `s.reset()`, `p.reset()`, `q.reset()` или выходе из `main`? Что остаётся существовать в точке C и чему равно `w.expired()`?
 **Ответ:**
 `~S` выведется тогда, когда общее число общих ссылок станет равным 0, а это произойдет в точке `C` (сразу после `q.reset()`). В точке `w.expired() == true`, потому что `shareds == 0` и будет вызван метод `Destroy` контрольного блока.
+
+#### Вопрос №3
+```C++
+#include <iostream>
+#include <memory>
+
+int main() {
+    int value = 42;
+
+    std::shared_ptr<int> empty;
+    std::shared_ptr<int> p(empty, &value);
+    std::weak_ptr<int> w = p;
+
+    // Точка A
+
+    auto q = w.lock();
+
+    // Точка B
+
+    p.reset();
+
+    // Точка C
+
+    std::cout << value << '\n';
+}
+```
+**Вопрос:**
+В точке A чему равны `bool(p)`, `p.use_count()` и `*p`? Корректно ли разыменование?
+**Ответ:**
