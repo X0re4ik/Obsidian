@@ -153,4 +153,8 @@ auto x = new T()
 new ControlBlock<T>(x)
 ```
 То, `combined_control_block` хранит объект внутри себя:
-
+```
+make_shared() {
+	auto* cb =
+}
+```
