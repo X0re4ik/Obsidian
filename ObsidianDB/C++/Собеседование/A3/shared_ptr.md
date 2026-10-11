@@ -114,10 +114,8 @@ struct combined_control_block : control_block
 {
 	
 	template <typename... Args> combined_control_block(Args &&...args) {
-
-::new (static_cast<void *>(buffer)) T(std::forward<Args>(args)...);
-
-}
+		::new (static_cast<void *>(buffer)) T(std::forward<Args>(args)...);
+	}
 	
     virtual void Destroy() noexcept override
     {
@@ -173,3 +171,6 @@ shared_ptr<T> make_shared(Args&&... args)
 }
 ```
 
+
+Разобрав две версии контрольного блока можно сделать вывод, что:
+1) Контрольный бло
