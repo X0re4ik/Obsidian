@@ -151,6 +151,10 @@ new ControlBlock<T>(x)
 ```
 То, `combined_control_block` хранит объект внутри себя:
 ```C++
+
+stcombined_control_block
+
+
 template<typename T, typename... Args>
 shared_ptr<T> make_shared(Args&&... args)
 {
