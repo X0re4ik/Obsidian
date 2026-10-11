@@ -147,4 +147,9 @@ struct combined_control_block : control_block
 
 ### Зачем выделять buffer размера T?
 
-Это и есть главная фишка 
+Это и есть главная фишка `combined_control_block`, если `separate_control_block` требовал двойного выделения памяти:
+```C++
+auto x = new T()
+new ControlBlock<T>(x)
+```
+То, 
