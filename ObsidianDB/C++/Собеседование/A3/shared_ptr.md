@@ -302,4 +302,4 @@ int main() {
 **Вопрос:**
 В точке B чему равны `w.expired()`, `bool(q)` и `q.use_count()`? Почему `lock()` даёт такой результат, хотя `p.get()` содержит адрес живого `value`?
 **Ответ:**
-`w.expired() == false`; `bool(q) == true`; `q.use_count() == 3`
+`w.expired() == false`; `bool(q) == false`; `q.use_count() == 3`; ``
