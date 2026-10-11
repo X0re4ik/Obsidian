@@ -352,3 +352,52 @@ int main() {
 **Вопрос:**
 В точке C чему равны `bool(c)` и `c.use_count()`? Можно ли прочитать `c->value`? Что выведется при последующих `c.reset()` и `b.reset()` — и будет ли повторно вызван `~S`?
 
+
+```C++
+#include <iostream>
+#include <memory>
+
+struct Node {
+    int id;
+    std::shared_ptr<Node> next;
+
+    explicit Node(int id) : id(id) {}
+
+    ~Node() {
+        std::cout << "~Node " << id << '\n';
+    }
+};
+
+int main() {
+    std::weak_ptr<Node> observer;
+
+    {
+        auto a = std::make_shared<Node>(1);
+        auto b = std::make_shared<Node>(2);
+
+        a->next = b;
+        b->next = a;
+
+        observer = a;
+
+        // Точка A
+    }
+
+    // Точка B
+
+    auto x = observer.lock();
+    x->next.reset();
+
+    // Точка C
+
+    x.reset();
+
+    // Точка D
+}
+```
+**Вопрос:**
+В точке A чему равны `a.use_count()` и `b.use_count()`? При выходе из внутреннего блока какие-либо `Node` уничтожатся? Чему равно `observer.expired()` в точке B?
+**Вопрос:**
+После `auto x = observer.lock()` чему равен `x.use_count()`? Что произойдёт при `x->next.reset()`: какой объект уничтожится и чему после этого будет равно `x.use_count()` в точке C?
+**Вопрос:**
+Что произойдёт при `x.reset()`? Напиши весь вывод программы в правильном порядке. В точке D остались ли живые объекты `Node` и какие управляющие блоки ещё существуют?
