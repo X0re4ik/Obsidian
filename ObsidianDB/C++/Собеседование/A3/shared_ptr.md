@@ -112,6 +112,11 @@ struct separate_control_block : control_block
 template<typename T>
 struct combined_control_block : control_block
 {
+	
+	combined_control_block() {
+	
+	}
+	
     virtual void Destroy() noexcept override
     {
         ptr()->~T();
@@ -152,7 +157,9 @@ new ControlBlock<T>(x)
 То, `combined_control_block` хранит объект внутри себя:
 ```C++
 
-stcombined_control_block
+strcut combined_control_block {
+
+};
 
 
 template<typename T, typename... Args>
