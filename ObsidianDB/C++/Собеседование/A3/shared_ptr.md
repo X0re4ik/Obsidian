@@ -302,3 +302,53 @@ int main() {
 **Вопрос:**
 Уничтожит ли `p.reset()` переменную `value`? Существует ли здесь управляющий блок и что определяет время жизни `value`?
 
+
+#### Вопрос №4
+```C++
+#include <iostream>
+#include <memory>
+
+struct S {
+    int value = 42;
+
+    ~S() {
+        std::cout << "~S\n";
+    }
+};
+
+struct NoDelete {
+    void operator()(S*) const noexcept {
+        std::cout << "NoDelete\n";
+    }
+};
+
+int main() {
+    auto a = std::make_shared<S>();
+    std::shared_ptr<S> b(a.get(), NoDelete{});
+
+    std::weak_ptr<S> wa = a;
+    std::weak_ptr<S> wb = b;
+
+    // Точка A
+
+    a.reset();
+
+    // Точка B
+
+    auto c = wb.lock();
+
+    // Точка C
+
+    c.reset();
+    b.reset();
+
+    // Точка D
+}
+```
+**Вопрос:**
+В точке A чему равны `a.use_count()` и `b.use_count()`? Сколько управляющих блоков создано? Означает ли `a.get() == b.get()`, что они разделяют владение?
+**Вопрос:**
+Что выведется при `a.reset()`? В точке B чему равны `wa.expired()` и `wb.expired()`? Можно ли корректно прочитать `b->value`?
+**Вопрос:**
+В точке C чему равны `bool(c)` и `c.use_count()`? Можно ли прочитать `c->value`? Что выведется при последующих `c.reset()` и `b.reset()` — и будет ли повторно вызван `~S`?
+
