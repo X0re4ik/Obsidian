@@ -114,7 +114,7 @@ struct combined_control_block : control_block
 {
 	
 	template <typename... Args>
-	combined_control_block(Args &&...args) : buffer(new (buffer) T(args...)) {}
+	combined_control_block(Args &&...args) 
 	
     virtual void Destroy() noexcept override
     {
