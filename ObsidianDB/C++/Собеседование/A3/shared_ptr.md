@@ -84,6 +84,8 @@ struct control_block
 };
 ```
 
+### shared_ptr<...>(...)
+
 Рассмотрим контрольный блок, который создаётся при стандартном вызове конструктора (`std::shared_ptr<int>(3)`):
 ```C++
 template<typename T>
@@ -105,3 +107,5 @@ struct separate_control_block : control_block
 
 `shared_ptr` и `control block` будут ссылаться на один и тот же объект выделенный в памяти:
 ![[Диаграмма без названия.drawio.svg]]
+
+### make_shared
