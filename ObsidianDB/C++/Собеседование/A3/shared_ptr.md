@@ -113,8 +113,11 @@ template<typename T>
 struct combined_control_block : control_block
 {
 	
-	template <typename... Args>
-	combined_control_block(Args &&...args) 
+	template <typename... Args> combined_control_block(Args &&...args) {
+
+::new (static_cast<void *>(buffer)) T(std::forward<Args>(args)...);
+
+}
 	
     virtual void Destroy() noexcept override
     {
