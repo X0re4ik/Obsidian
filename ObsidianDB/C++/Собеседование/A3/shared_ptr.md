@@ -1,6 +1,4 @@
 
-
-
 ```C++
 auto s = std::make_shared<S>();
 auto i = std::shared_ptr<int>(s, &s->b);
@@ -103,4 +101,4 @@ struct separate_control_block : control_block
 };
 ```
 
-Обратим внимание, что контрольный блок `separate_control_block` содержит информацию об объекте, которым владеет `shared_ptr`. 
+Обратим внимание, что контрольный блок `separate_control_block` содержит информацию об объекте, которым владеет `shared_ptr`. Логика достаточно тривиальная, если `shareds == 0` - вызвать delete 
