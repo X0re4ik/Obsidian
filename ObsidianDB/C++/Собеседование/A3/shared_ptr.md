@@ -114,7 +114,6 @@ struct combined_control_block : control_block
 {
 	
 	combined_control_block() {
-	
 	}
 	
     virtual void Destroy() noexcept override
@@ -154,7 +153,7 @@ struct combined_control_block : control_block
 auto x = new T()
 new ControlBlock<T>(x)
 ```
-То, `combined_control_block` хранит объект внутри себя, соответсвенно память вы:
+То, `combined_control_block` хранит объект внутри себя, соответсвенно, память выделяется только под контрольный блок:
 ```C++
 template<typename T, typename... Args>
 shared_ptr<T> make_shared(Args&&... args)
