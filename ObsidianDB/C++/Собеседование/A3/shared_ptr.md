@@ -108,4 +108,26 @@ struct separate_control_block : control_block
 `shared_ptr` и `control block` будут ссылаться на один и тот же объект выделенный в памяти:
 ![[Диаграмма без названия.drawio.svg]]
 
-### make_shared
+### make_shared<...>()
+
+`std::make_shared<T>` использует совершенно другой контрольный блок - `combined_control_block`:
+```C++
+template<typename T>
+struct combined_control_block : control_block
+{
+    virtual void Destroy() noexcept override
+    {
+        ptr()->~T();
+    }
+    virtual void Delete() noexcept override
+    {
+        delete this;
+    }
+    T* ptr() { return reinterpret_cast<T*>(buffer); }
+
+    // This buffer holds a "T"
+    [[alignas(T)]] char buffer[sizeof(T)];
+};
+```
+
+Он гараздо сложнее,
