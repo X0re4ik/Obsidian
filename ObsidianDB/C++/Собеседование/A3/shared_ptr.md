@@ -136,3 +136,7 @@ struct combined_control_block : control_block
 3) Зачем выделять buffer размера T?
 4) Что такое `[[alignas(T)]]` и почему нельзя написать `char buffer[sizeof(T)];`?
 
+
+
+### Зачем отдельный метод `ptr()`?
+пО
