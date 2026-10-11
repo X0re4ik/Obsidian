@@ -153,14 +153,18 @@ auto x = new T()
 new ControlBlock<T>(x)
 ```
 То, `combined_control_block` хранит объект внутри себя:
-```
-make_shared() {
-	alignas(T) unsigned char buffer[sizeof(T)];
-	auto* p = new (buffer) T(args...);
-	auto* cb = new combined_control_block{1, 1, buffer};
-	return std::shared_ptr(
-		std::make_shared_t(), // Специальный тег приватного конструктора
-		cb,
-	)
+```C++
+template<typename T, typename... Args>
+shared_ptr<T> make_shared(Args&&... args)
+{
+    auto* cb = new combined_control_block<T>(
+        std::forward<Args>(args)...
+    );
+
+    return shared_ptr<T>(
+        make_shared_t{}, // TAG: Приватный конструктор
+        cb->ptr(),       // Указатель на T
+        cb               // Указатель на control block
+    );
 }
 ```
