@@ -177,3 +177,7 @@ shared_ptr<T> make_shared(Args&&... args)
 2) Вариант с `std::make_shared` предпочтительней из-за меньших выделений памяти
 3) В основе контрольного блока `combined_control_block` лежит механизм `placement new`
 
+
+### Где реально полезен weak_ptr
+
+Ка
