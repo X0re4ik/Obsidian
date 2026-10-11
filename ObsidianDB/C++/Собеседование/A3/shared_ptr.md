@@ -156,12 +156,11 @@ new ControlBlock<T>(x)
 ```
 make_shared() {
 	alignas(T) unsigned char buffer[sizeof(T)];
-	T* p = new (buffer) T(args...);
-	combined_control_block{1, 1, }
-	std::shared_ptr(
+	auto* p = new (buffer) T(args...);
+	auto* cb = new combined_control_block{1, 1, buffer};
+	return std::shared_ptr(
 		std::make_shared_t(), // Специальный тег приватного конструктора
-		
-		
+		cb,
 	)
 }
 ```
