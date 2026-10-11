@@ -260,3 +260,4 @@ int main() {
 **Вопрос:**
 В точке A чему равны `bool(p)`, `p.use_count()` и `w.expired()`? Жив ли объект `S`?
 **Ответ:**
+`bool(p) == false`; `p.use_count() == 1`; `w.expired() == false`. Объект `S` 
