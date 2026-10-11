@@ -185,3 +185,39 @@ shared_ptr<T> make_shared(Args&&... args)
 ### Разбор кейсов
 
 #### Вопрос №1
+```C++
+#include <iostream>
+#include <memory>
+
+struct S {
+    int a = 42;
+    int b = 99;
+
+    ~S() {
+        std::cout << "~S\n";
+    }
+};
+
+int main() {
+    auto s = std::make_shared<S>();
+    auto i = std::shared_ptr<int>(s, &s->b);
+    std::weak_ptr<int> w = i;
+
+    s.reset();
+
+    auto j = w.lock();
+    i.reset();
+
+    // Точка A
+
+    j.reset();
+
+    // Точка B
+}
+```
+**Вопрос:**
+1) В точке A чему равны `j.use_count()` и `w.use_count()`? Какое значение даст `*j`, и почему это обращение корректно или некорректно?
+2)Когда именно выведется `~S`? Почему тип `shared_ptr<int>` у переменной `j` не мешает уничтожению всего объекта `S`?
+* В точке B чему равны `w.expired()` и результат `bool(w.lock())`? Существует ли ещё управляющий блок — и если да, что удерживает его?
+**Ответ:**
+- 
