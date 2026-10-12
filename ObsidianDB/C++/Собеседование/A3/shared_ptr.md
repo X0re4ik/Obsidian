@@ -451,7 +451,7 @@ q.reset();
 
 **Ответ:**
 
-`bool(s)`
+`bool(s) == true`; `s.use_count() == 2`; 
 
 **Вопрос:**
 
