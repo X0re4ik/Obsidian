@@ -45,12 +45,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "цуцуцу/Подходы к оценке.md",
+                "file": "C++/Собеседование/A3/shared_ptr.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Подходы к оценке"
+              "title": "shared_ptr"
             }
           }
         ],
@@ -244,8 +244,8 @@
   },
   "active": "33b49bbf4d25c33b",
   "lastOpenFiles": [
-    "C++/Собеседование/A3/shared_ptr.md",
     "цуцуцу/Подходы к оценке.md",
+    "C++/Собеседование/A3/shared_ptr.md",
     "цуцуцу/Без названия",
     "цуцуцу",
     "C++/Собеседование/A3/Диаграмма без названия.drawio.svg",
