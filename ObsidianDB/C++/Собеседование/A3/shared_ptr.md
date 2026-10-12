@@ -470,3 +470,38 @@ q.reset();
 `~S` - не будет вызван в данной программе, хотя бы потому что объект `s` никуда не исчез, он все так же хранит указатель и все так же "держит контрольный блок". `w.expired() == false`. Нет, больше управляющих блоков нет.
 
 
+
+
+```C++
+struct Base {
+    ~Base() {
+        std::cout << "~Base\n";
+    }
+};
+
+struct Derived : Base {
+    ~Derived() {
+        std::cout << "~Derived\n";
+    }
+};
+```
+```C++
+// Вариант A
+{
+    std::shared_ptr<Base> p(new Derived);
+}
+```
+```C++
+// Вариант B
+{
+    Base* raw = new Derived;
+    std::shared_ptr<Base> p(raw);
+}
+```
+```C++
+// Вариант C
+{
+    std::shared_ptr<Base> p = std::make_shared<Derived>();
+}
+```
+
