@@ -416,3 +416,31 @@ int main() {
 После `auto x = observer.lock()` чему равен `x.use_count()`? Что произойдёт при `x->next.reset()`: какой объект уничтожится и чему после этого будет равно `x.use_count()` в точке C?
 **Вопрос:**
 Что произойдёт при `x.reset()`? Напиши весь вывод программы в правильном порядке. В точке D остались ли живые объекты `Node` и какие управляющие блоки ещё существуют?
+
+
+```
+struct S {
+    int value = 42;
+
+    ~S() {
+        std::cout << "~S\n";
+    }
+};
+
+auto s = std::make_shared<S>();
+int* address = &s->value;
+
+std::shared_ptr<int> p(std::move(s), address);
+std::weak_ptr<int> w = p;
+
+// Точка A
+
+auto q = p;
+p.reset();
+
+// Точка B
+
+q.reset();
+
+// Точка C
+```
