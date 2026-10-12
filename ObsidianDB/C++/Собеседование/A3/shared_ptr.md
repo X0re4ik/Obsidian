@@ -459,7 +459,7 @@ q.reset();
 
 **Ответ:**
 
-`bool(p) == false`, `q.use_count()` и `w.use_count()`
+`bool(p) == false`, `q.use_count() == 2` и `w.use_count() == 2`. Сброс `p` не мешает разыменованию `q`, потому что 
 
 **Вопрос:**
 
