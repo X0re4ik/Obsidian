@@ -5,4 +5,4 @@ ros2 node list
 colcon build
 
 
-source 
+source ./install/setup.bash
