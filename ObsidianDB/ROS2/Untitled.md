@@ -10,3 +10,6 @@ source ./install/setup.bash
 
 1 папка это проектс  подмодлями
 
+colcon build --packages-select robolaunch_cloudy_navigation
+
+
