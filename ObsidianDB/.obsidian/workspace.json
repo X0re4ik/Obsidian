@@ -40,17 +40,17 @@
             }
           },
           {
-            "id": "33b49bbf4d25c33b",
+            "id": "e9b62f240afd165c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "C++/Собеседование/A3/А3. Краткий ответ по вопросам ДЗ№1.md",
+                "file": "C++/Собеседование/A3/А3. Краткий ответ по вопросам ДЗ№3.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "А3. Краткий ответ по вопросам ДЗ№1"
+              "title": "А3. Краткий ответ по вопросам ДЗ№3"
             }
           }
         ],
@@ -211,7 +211,7 @@
             }
           },
           {
-            "id": "a1337e5b28ece8ca",
+            "id": "ea9565e49b45a209",
             "type": "leaf",
             "state": {
               "type": "mermaid-toolbar-view",
@@ -221,11 +221,11 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
-    "width": 301.5
+    "width": 300.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -238,16 +238,17 @@
       "audio-recorder:Start/stop recording": false,
       "bases:Create new base": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "obsidian-git:Open Git source control": false,
       "mermaid-tools:Open Mermaid Toolbar": false
     }
   },
-  "active": "33b49bbf4d25c33b",
+  "active": "e9b62f240afd165c",
   "lastOpenFiles": [
     "C++/Собеседование/A3/Итераторы.md",
-    "C++/Собеседование/A3/А3. Краткий ответ по вопросам ДЗ№1.md",
-    "C++/Собеседование/A3/map.md",
     "C++/Собеседование/A3/Организация памяти процессора.md",
+    "C++/Собеседование/A3/А3. Краткий ответ по вопросам ДЗ№3.md",
+    "C++/Собеседование/A3/vector.md",
+    "C++/Собеседование/A3/А3. Краткий ответ по вопросам ДЗ№3.md",
+    "C++/Собеседование/A3/map.md",
     "C++/Собеседование/A3/shared_ptr.md",
     "C++/Собеседование/A3/perf.md",
     "C++/Собеседование/A3/Valgrind.md",
@@ -260,7 +261,6 @@
     "Pasted image 20261004161834.png",
     "Pasted image 20261004161848.png",
     "C++/ыыв.md",
-    "C++/Собеседование/A3/vector.md",
     "Аналитика/constVStmp численность.md",
     "Аналитика/Обновление предложение ЦА.drawio",
     "[[Итераторы.md",
@@ -280,7 +280,6 @@
     "C++/Собеседование/A2/Исключения.md",
     "C++/Собеседование/A2/Наследование.md",
     "C++/Собеседование/A2/Логирование.md",
-    "C++/Собеседование/A2/Идиомы.md",
     "Linux",
     "Pasted image 20260627160703.png",
     "Pasted image 20260816094404.png",
