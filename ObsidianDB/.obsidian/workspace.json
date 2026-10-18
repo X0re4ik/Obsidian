@@ -219,9 +219,19 @@
               "icon": "trident-custom",
               "title": "Mermaid Toolbar"
             }
+          },
+          {
+            "id": "9652f446395e1bee",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
         ],
-        "currentTab": 6
+        "currentTab": 7
       }
     ],
     "direction": "horizontal",
@@ -242,7 +252,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "ea9565e49b45a209",
+  "active": "9652f446395e1bee",
   "lastOpenFiles": [
     "C++/Собеседование/A3/Итераторы.md",
     "C++/Собеседование/A3/Организация памяти процессора.md",
