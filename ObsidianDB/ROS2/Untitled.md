@@ -13,3 +13,4 @@ source ./install/setup.bash
 colcon build --packages-select robolaunch_cloudy_navigation
 
 
+colcon list 
