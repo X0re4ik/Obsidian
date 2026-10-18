@@ -8,53 +8,20 @@
         "type": "tabs",
         "children": [
           {
-            "id": "3afb2b9e9a4e468b",
+            "id": "5cb1c296bf1df584",
             "type": "leaf",
-            "pinned": true,
             "state": {
               "type": "markdown",
               "state": {
-                "file": "C++/Собеседование/A3/А1. Краткий ответ по вопросам ДЗ№1.md",
+                "file": "C++/users/Создание проекта.md",
                 "mode": "source",
                 "source": false
               },
-              "pinned": true,
               "icon": "lucide-file",
-              "title": "А1. Краткий ответ по вопросам ДЗ№1"
-            }
-          },
-          {
-            "id": "ace20b4359ba6241",
-            "type": "leaf",
-            "pinned": true,
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "C++/Собеседование/A3/vector.md",
-                "mode": "source",
-                "source": false
-              },
-              "pinned": true,
-              "icon": "lucide-file",
-              "title": "vector"
-            }
-          },
-          {
-            "id": "e9b62f240afd165c",
-            "type": "leaf",
-            "state": {
-              "type": "split-diff-view",
-              "state": {
-                "aFile": "ObsidianDB/C++/Собеседование/A3/А3. Краткий ответ по вопросам ДЗ№3.md",
-                "bFile": "ObsidianDB/C++/Собеседование/A3/А3. Краткий ответ по вопросам ДЗ№3.md",
-                "aRef": ""
-              },
-              "icon": "diff",
-              "title": "Diff: А3. Краткий ответ по вопросам ДЗ№3  (Working Tree)"
+              "title": "Создание проекта"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -209,19 +176,9 @@
               "icon": "spreadsheet",
               "title": "Advanced Tables"
             }
-          },
-          {
-            "id": "ea9565e49b45a209",
-            "type": "leaf",
-            "state": {
-              "type": "mermaid-toolbar-view",
-              "state": {},
-              "icon": "trident-custom",
-              "title": "Mermaid Toolbar"
-            }
           }
         ],
-        "currentTab": 6
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -242,8 +199,18 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "ea9565e49b45a209",
+  "active": "88283cefa598f31f",
   "lastOpenFiles": [
+    "ROS2",
+    "Projects/Untitled.md",
+    "Projects/KSIVI",
+    "C++/users/Создание проекта.md",
+    "Projects",
+    "Linux/ДЗ. Вопросы по Linux.md",
+    "Аналитика/constVStmp численность.md",
+    "цуцуцу/Подходы к оценке.md",
+    "Диаграмма без названия.drawio.svg",
+    "Pasted image 20261004161848.png",
     "C++/Собеседование/A3/А3. Краткий ответ по вопросам ДЗ№3.md",
     "C++/Собеседование/A3/Итераторы.md",
     "C++/Собеседование/A3/Организация памяти процессора.md",
@@ -252,20 +219,15 @@
     "C++/Собеседование/A3/shared_ptr.md",
     "C++/Собеседование/A3/perf.md",
     "C++/Собеседование/A3/Valgrind.md",
-    "цуцуцу/Подходы к оценке.md",
     "цуцуцу/Без названия",
     "цуцуцу",
     "C++/Собеседование/A3/Диаграмма без названия.drawio.svg",
-    "Диаграмма без названия.drawio.svg",
     "Pasted image 20261004161831.png",
     "Pasted image 20261004161834.png",
-    "Pasted image 20261004161848.png",
     "C++/ыыв.md",
-    "Аналитика/constVStmp численность.md",
     "Аналитика/Обновление предложение ЦА.drawio",
     "[[Итераторы.md",
     "Аналитика",
-    "C++/users/Создание проекта.md",
     "AI/Промт.md",
     "C++/Виды связываний (external, internal, no linkage) для самых маленьких.md",
     "C++/Собеседование/A2/А2. Краткий ответ по вопросам ДЗ№2.md",
@@ -278,8 +240,6 @@
     "C++/Собеседование/A2/Без названия.md",
     "C++/Собеседование/A2/Виртуализация и контейнеризация.md",
     "C++/Собеседование/A2/Исключения.md",
-    "C++/Собеседование/A2/Наследование.md",
-    "C++/Собеседование/A2/Логирование.md",
     "Linux",
     "Pasted image 20260627160703.png",
     "Pasted image 20260816094404.png",
@@ -287,8 +247,6 @@
     "Pasted image 20260802195443.png",
     "Без названия.canvas",
     "Английский язык",
-    "25",
-    "C++/Собеседование/A2/Методы класса",
     "C++/Компиляция/Снимок экрана от 2026-07-18 19-36-35.png"
   ]
 }
