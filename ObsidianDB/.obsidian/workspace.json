@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ROS2/Untitled.md",
+                "file": "C++/Собеседование/A3/А3. Краткий ответ по вопросам ДЗ№3.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Untitled"
+              "title": "А3. Краткий ответ по вопросам ДЗ№3"
             }
           }
         ]
@@ -201,8 +201,9 @@
   },
   "active": "5cb1c296bf1df584",
   "lastOpenFiles": [
-    "C++/users/Создание проекта.md",
+    "C++/Собеседование/A3/vector.md",
     "ROS2/Untitled.md",
+    "C++/users/Создание проекта.md",
     "ROS2",
     "Projects/Untitled.md",
     "Projects/KSIVI",
@@ -215,7 +216,6 @@
     "C++/Собеседование/A3/А3. Краткий ответ по вопросам ДЗ№3.md",
     "C++/Собеседование/A3/Итераторы.md",
     "C++/Собеседование/A3/Организация памяти процессора.md",
-    "C++/Собеседование/A3/vector.md",
     "C++/Собеседование/A3/map.md",
     "C++/Собеседование/A3/shared_ptr.md",
     "C++/Собеседование/A3/perf.md",
