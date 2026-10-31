@@ -33,6 +33,7 @@ std::thread t([]() { std::cout << std::this_tread::id << std::endl; });
 
 ### Что такое std::condition_variable? Какие проблемы могут возникнуть при работе с std::condition_variable?
 
+`std::condition_variable` - это примитив синхронизации
 
 ### Как правильно управлять блокировкой mutex? Что такое std::lock_guard и std::unique_lock? Чем они отличаются друг от друга?
 
@@ -87,7 +88,7 @@ std::thread t1([&](){ ++g_counter; });
 std::thread t2([&](){ ++g_counter; });
 ```
 
-Если `deadlock` может полностью заблокировать работу прогаммы, то  
+Если `deadlock` может полностью заблокировать работу прогаммы, то `data race` может привести к неопредленному поведению.
 
 ### Что произойдет, если объект std::thread будет разрушен, а поток не был ни joined, ни detached?
 
