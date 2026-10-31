@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "C++/Multithreading/0101 - Передача владения.md",
+                "file": "C++/Multithreading/0101 - Передача объектов в поток.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "0101 - Передача владения"
+              "title": "0101 - Передача объектов в поток"
             }
           }
         ]
@@ -202,7 +202,7 @@
   "active": "5cb1c296bf1df584",
   "lastOpenFiles": [
     "C++/Multithreading/0100 - Введение.md",
-    "C++/Multithreading/0101 - Передача владения.md",
+    "C++/Multithreading/0101 - Передача объектов в поток.md",
     "ROS2/Untitled.md",
     "C++/Multithreading",
     "C++/Собеседование/A3/А3. Краткий ответ по вопросам ДЗ№3.md",
