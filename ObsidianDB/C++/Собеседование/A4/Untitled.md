@@ -41,22 +41,29 @@ std::thread t([]() { std::cout << std::this_tread::id << std::endl; });
 ### Что такое взаимная блокировка (deadlock)? Приведи пример ситуации, когда она может возникнуть. Как её избежать?
 
 Взаимная блокировка - это ситуация, когда два и более потока заблокированы, потому что каждый из них ждет ресурс, занятый другим.
+
 **Пример:**
 ```C++
-
 strcut A {
 	std::mutex m;
 	int balance;
 };
 
-void transfer(A& to, A& , int sum) {
-	std::lock_guard alock{a.m};
-	std::lock_guard alock{b.m};
+void transfer(A& to, A& from, int sum) {
+	std::lock_guard alock{to.m};
+	std::lock_guard alock{from.m};
 	
-	a.balance += sum;
-	b.balance -= sum;
+	to.balance += sum;
+	from.balance -= sum;
 }
+
+// Поток 1
+transfer(a, b, 100);
+// Поток 2
+transfer(b, a, 100);
 ```
+
+Пример выше демонстрирует 
 
 
 ### Что такое гонка данных (data race)? Чем она отличается от deadlock?
