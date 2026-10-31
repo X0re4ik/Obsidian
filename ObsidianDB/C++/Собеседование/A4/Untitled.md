@@ -33,7 +33,13 @@ std::thread t([]() { std::cout << std::this_tread::id << std::endl; });
 
 ### Что такое std::condition_variable? Какие проблемы могут возникнуть при работе с std::condition_variable?
 
-`std::condition_variable` - это примитив синхронизации
+`std::condition_variable` - это примитив синхронизации, реализующий паттерн ожидание/уведомление
+
+**Пример**
+
+```C++
+
+```
 
 ### Как правильно управлять блокировкой mutex? Что такое std::lock_guard и std::unique_lock? Чем они отличаются друг от друга?
 
