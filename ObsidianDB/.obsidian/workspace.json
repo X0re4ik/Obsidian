@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ROS2/Untitled.md",
+                "file": "C++/Multithreading/0100 - Введение.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Untitled"
+              "title": "0100 - Введение"
             }
           }
         ]
@@ -201,9 +201,11 @@
   },
   "active": "5cb1c296bf1df584",
   "lastOpenFiles": [
+    "ROS2/Untitled.md",
+    "C++/Multithreading/0100 - Введение.md",
+    "C++/Multithreading",
     "C++/Собеседование/A3/А3. Краткий ответ по вопросам ДЗ№3.md",
     "C++/Собеседование/A3/vector.md",
-    "ROS2/Untitled.md",
     "C++/users/Создание проекта.md",
     "ROS2",
     "Projects/Untitled.md",
@@ -240,8 +242,6 @@
     "C++/users",
     "C++/Собеседование/A2/Без названия.md",
     "C++/Собеседование/A2/Виртуализация и контейнеризация.md",
-    "C++/Собеседование/A2/Исключения.md",
-    "Linux",
     "Pasted image 20260627160703.png",
     "Pasted image 20260816094404.png",
     "Pasted image 20260802195445.png",
