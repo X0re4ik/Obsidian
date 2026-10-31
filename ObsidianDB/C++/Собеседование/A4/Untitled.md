@@ -83,9 +83,11 @@ transfer(b, a, 100);
 ```C++
 int g_counter = 0;
 
-std::thread t1([&](){ ++g_counter; };);
+std::thread t1([&](){ ++g_counter; });
+std::thread t2([&](){ ++g_counter; });
 ```
 
+Если `deadlock` может полностью заблокировать работу прогаммы, то  
 
 ### Что произойдет, если объект std::thread будет разрушен, а поток не был ни joined, ни detached?
 
