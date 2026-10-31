@@ -49,8 +49,13 @@ strcut A {
 	int balance;
 };
 
-void transfer(A& a, A& b)
-
+void transfer(A& to, A& , int sum) {
+	std::lock_guard alock{a.m};
+	std::lock_guard alock{b.m};
+	
+	a.balance += sum;
+	b.balance -= sum;
+}
 ```
 
 
