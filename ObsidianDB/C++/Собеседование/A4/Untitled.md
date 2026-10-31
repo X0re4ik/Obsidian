@@ -10,7 +10,7 @@ std::thread t([]() { std::cout << std::this_tread::id << std::endl; });
 
 ## В чем отличие join от detach?
 
-`.join()` 
+`.join()` дожидается завершение работы потока, в то время как `detach` отсоединяет объект std::t
 
     
 2. Может ли std::thread возвращать значение?
