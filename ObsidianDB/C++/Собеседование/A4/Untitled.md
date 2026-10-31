@@ -51,7 +51,7 @@ strcut A {
 
 void transfer(A& to, A& from, int sum) {
 	std::lock_guard alock{to.m};
-	std::lock_guard alock{from.m};
+	std::lock_guard block{from.m};
 	
 	to.balance += sum;
 	from.balance -= sum;
@@ -69,7 +69,9 @@ transfer(b, a, 100);
 3) "Поток 2" заходит в transfer
 4) "Поток 2" **захватывает** mutex объекта **b**
 
-Далее ни Поток 1" , ни Поток 2" 
+Далее ни "Поток 1" , ни "Поток 2" не могут выполняться, так как оба мьютекса a и b уже захвачены.
+
+Избежать 
 
 ### Что такое гонка данных (data race)? Чем она отличается от deadlock?
 
