@@ -46,7 +46,11 @@ std::thread t([]() { std::cout << std::this_tread::id << std::endl; });
 
 ### Что произойдет, если объект std::thread будет разрушен, а поток не был ни joined, ни detached?
 
-В деструкторе `std::thread` есть условие, что 
+В деструкторе `std::thread` есть условие:
+```C++
+if (joinable()) std::__terminate();
+```
+Соотвестве
 
 
 
