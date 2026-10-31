@@ -50,7 +50,8 @@ std::thread t([]() { std::cout << std::this_tread::id << std::endl; });
 ```C++
 if (joinable()) std::__terminate();
 ```
-Соотвестве
+Соотвестветсвенно, если мы не дождались `.join()` и/или не вызвали `.detached()`, то объект будет считаться `.joinable()`.
+
 
 
 
