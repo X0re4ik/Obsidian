@@ -5,11 +5,13 @@
 
 в C++ поток можно создать при помощи объекта `std::thread`
 ```C++
-std::thread t([]() {})
+std::thread t([]() { std::cout << std::this_tread::id << std::endl; });
 ```
 
+## В чем отличие join от detach?
 
-1. В чем отличие join от detach?
+`.join()` 
+
     
 2. Может ли std::thread возвращать значение?
     
