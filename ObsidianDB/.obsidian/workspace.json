@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "C++/Собеседование/A4/Untitled.md",
+                "file": "C++/Asio/Untitled.md",
                 "mode": "source",
                 "source": false
               },
@@ -201,8 +201,10 @@
   },
   "active": "5cb1c296bf1df584",
   "lastOpenFiles": [
-    "C++/Multithreading/0200 - Примитивы синхронизации.md",
     "C++/Собеседование/A4/Untitled.md",
+    "C++/Asio/Untitled.md",
+    "C++/Asio",
+    "C++/Multithreading/0200 - Примитивы синхронизации.md",
     "C++/Собеседование/A4",
     "C++/Multithreading/0101 - Передача объектов в поток.md",
     "C++/Multithreading/0100 - Введение.md",
@@ -240,8 +242,6 @@
     "C++/Собеседование/A2/А2. Краткий ответ по вопросам ДЗ№2.md",
     "C++/Собеседование/А1/А1. Краткий ответ по вопросам ДЗ№1.md",
     "C++/RVO и NRVO.md",
-    "C++/Категории значений в C++.md",
-    "C++/Собеседование/A3",
     "Pasted image 20260627160703.png",
     "Pasted image 20260816094404.png",
     "Pasted image 20260802195445.png",
