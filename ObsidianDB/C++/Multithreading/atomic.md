@@ -80,4 +80,8 @@ release
 5) `memory_order_acq_rel` - 
 Применяется только к операциям `read-modify-write (RMW)`: `fetch_add`, `fetch_sub`, `exchange`, `compare_exchange`, `fetch_or` - то есть к операция, которые одновременно читают и пишут атомарную переменную.
 
-ПР
+**Пример:**
+```
+std::atomic<int> cnt{0};
+int old = cnt.fetch_add(1, std::memory_order_relaxed); // old == 0, cnt == 1
+```
