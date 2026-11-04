@@ -58,3 +58,5 @@ LOAD  r6,[z]  ┘
 
 ## Memory model
 
+
+1) `memory_order_relaxed` (Ослабленное (**Relaxed**) упорядочение)
