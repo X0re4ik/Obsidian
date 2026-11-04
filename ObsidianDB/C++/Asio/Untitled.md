@@ -3,6 +3,8 @@
 
 boost::asio::io_context - объект, который связывает программу с асинхронными механизмами ОС. Очередь событий + треды, которые ее рашребают
 
+https://www.boost.org/doc/libs/1_53_0/doc/html/boost_asio/examples.html
+
 
 **Proactor vs Reactor**
 
