@@ -12,4 +12,7 @@ XX_YY - гарнтирует, что все XX операции до барье�
 * StoreStore
 
 Обычно в "сыром" виде виде барьеры не встречаются на процессорах - их объеденяют в группы:
-* Группа **Acquire**
+* Группа **Acquire**: LoadLoad; LoadStore
+* Группа **Release**: StoreStore; LoadStore
+
+
