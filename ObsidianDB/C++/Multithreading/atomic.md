@@ -58,4 +58,3 @@ LOAD  r6,[z]  ┘
 
 ## Memory model
 
-1) 
