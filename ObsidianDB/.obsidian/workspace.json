@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "C++/Собеседование/A4/Untitled.md",
+                "file": "C++/Untitled.md",
                 "mode": "source",
                 "source": false
               },
@@ -201,12 +201,13 @@
   },
   "active": "5cb1c296bf1df584",
   "lastOpenFiles": [
+    "C++/Собеседование/A4/Untitled.md",
+    "C++/Untitled.md",
     "C++/Multithreading/atomic.md",
     "C++/Asio/Untitled.md",
     "C++/Компиляция/Компиляция.md",
     "C++/Компиляция/И еще раз про динамические библиотеки.md",
     "C++/Multithreading/0200 - Примитивы синхронизации.md",
-    "C++/Собеседование/A4/Untitled.md",
     "C++/Asio",
     "C++/Собеседование/A4",
     "C++/Multithreading/0101 - Передача объектов в поток.md",
@@ -241,7 +242,6 @@
     "[[Итераторы.md",
     "Аналитика",
     "AI/Промт.md",
-    "C++/Виды связываний (external, internal, no linkage) для самых маленьких.md",
     "Pasted image 20260627160703.png",
     "Pasted image 20260816094404.png",
     "Pasted image 20260802195445.png",
