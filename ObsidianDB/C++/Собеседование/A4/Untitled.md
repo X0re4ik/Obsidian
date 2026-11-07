@@ -131,7 +131,7 @@ if (joinable()) std::__terminate();
 
 
 
-
+curl -k ipinfo.io
 
 
 
