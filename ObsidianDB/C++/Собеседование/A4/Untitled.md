@@ -261,4 +261,4 @@ default via 192.168.0.1 dev wlo1 proto dhcp metric 600
 
 ### Что такое NAT? Зачем он нужен? Как он влияет на количество IP-адресов, видимых снаружи сети?
 
-NAT (Network Address Translation) - 
+NAT (Network Address Translation) - это технология, которая позволяет 
