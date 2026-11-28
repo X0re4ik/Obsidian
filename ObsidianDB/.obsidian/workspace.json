@@ -4,25 +4,9 @@
     "type": "split",
     "children": [
       {
-        "id": "1a52588d8acb0cf6",
+        "id": "85077f737f8b6183",
         "type": "tabs",
         "children": [
-          {
-            "id": "5cb1c296bf1df584",
-            "type": "leaf",
-            "pinned": true,
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "C++/Собеседование/A4/А4. Краткий ответ по вопросам ДЗ№4.md",
-                "mode": "source",
-                "source": false
-              },
-              "pinned": true,
-              "icon": "lucide-file",
-              "title": "А4. Краткий ответ по вопросам ДЗ№4"
-            }
-          },
           {
             "id": "3576bd87201ab410",
             "type": "leaf",
@@ -38,8 +22,25 @@
               "icon": "lucide-file",
               "title": "sdsdds"
             }
+          },
+          {
+            "id": "5cb1c296bf1df584",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "C++/Собеседование/A4/А4. Краткий ответ по вопросам ДЗ№4.md",
+                "mode": "source",
+                "source": false
+              },
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "А4. Краткий ответ по вопросам ДЗ№4"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
