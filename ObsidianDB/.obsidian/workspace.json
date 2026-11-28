@@ -39,7 +39,8 @@
               "title": "sdsdds"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -217,10 +218,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "5cb1c296bf1df584",
+  "active": "3576bd87201ab410",
   "lastOpenFiles": [
-    "sdsdds.md",
     "C++/Собеседование/A4/А4. Краткий ответ по вопросам ДЗ№4.md",
+    "sdsdds.md",
     "ывыв.md",
     "C++/Собеседование/A3/А3. Краткий ответ по вопросам ДЗ№3.md",
     "C++/Собеседование/A3/map.md",
