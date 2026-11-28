@@ -26,6 +26,7 @@
           {
             "id": "3576bd87201ab410",
             "type": "leaf",
+            "pinned": true,
             "state": {
               "type": "markdown",
               "state": {
@@ -33,12 +34,12 @@
                 "mode": "source",
                 "source": false
               },
+              "pinned": true,
               "icon": "lucide-file",
               "title": "sdsdds"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -216,10 +217,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "3576bd87201ab410",
+  "active": "5cb1c296bf1df584",
   "lastOpenFiles": [
-    "ывыв.md",
     "sdsdds.md",
+    "ывыв.md",
     "C++/Собеседование/A4/А4. Краткий ответ по вопросам ДЗ№4.md",
     "C++/Собеседование/A3/А3. Краткий ответ по вопросам ДЗ№3.md",
     "C++/Собеседование/A3/map.md",
