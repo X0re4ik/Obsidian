@@ -10,15 +10,17 @@
           {
             "id": "5cb1c296bf1df584",
             "type": "leaf",
+            "pinned": true,
             "state": {
               "type": "markdown",
               "state": {
-                "file": "C++/Собеседование/A4/Untitled.md",
+                "file": "C++/Собеседование/A4/А4. Краткий ответ по вопросам ДЗ№4.md",
                 "mode": "source",
                 "source": false
               },
+              "pinned": true,
               "icon": "lucide-file",
-              "title": "Untitled"
+              "title": "А4. Краткий ответ по вопросам ДЗ№4"
             }
           }
         ]
@@ -201,8 +203,10 @@
   },
   "active": "5cb1c296bf1df584",
   "lastOpenFiles": [
+    "C++/Собеседование/A3/А3. Краткий ответ по вопросам ДЗ№3.md",
+    "C++/Собеседование/A4/А4. Краткий ответ по вопросам ДЗ№4.md",
+    "C++/Собеседование/A3/map.md",
     "ывыв.md",
-    "C++/Собеседование/A4/Untitled.md",
     "TCP - конспект для повторения.md",
     "C++/Untitled.md",
     "C++/Multithreading/atomic.md",
@@ -216,7 +220,6 @@
     "C++/Multithreading/0100 - Введение.md",
     "ROS2/Untitled.md",
     "C++/Multithreading",
-    "C++/Собеседование/A3/А3. Краткий ответ по вопросам ДЗ№3.md",
     "C++/Собеседование/A3/vector.md",
     "C++/users/Создание проекта.md",
     "ROS2",
@@ -230,7 +233,6 @@
     "Pasted image 20261004161848.png",
     "C++/Собеседование/A3/Итераторы.md",
     "C++/Собеседование/A3/Организация памяти процессора.md",
-    "C++/Собеседование/A3/map.md",
     "C++/Собеседование/A3/shared_ptr.md",
     "C++/Собеседование/A3/perf.md",
     "C++/Собеседование/A3/Valgrind.md",
